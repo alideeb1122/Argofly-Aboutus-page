@@ -1,0 +1,190 @@
+@custom-variant dark (&:is(.dark *));
+
+.argo-about-page {
+  --font-size: 16px;
+  --background: #ffffff;
+  --foreground: 215 25% 15%;
+  --card: #ffffff;
+  --card-foreground: 215 25% 15%;
+  --popover: oklch(1 0 0);
+  --popover-foreground: 215 25% 15%;
+  /* Brand: primary #0DE3F6, accent #468FD7 */
+  --primary: 185 93% 51%;
+  --primary-foreground: 0 0% 9%;
+  --primary-hover: 185 93% 42%;
+  --primary-light: 185 80% 96%;
+  --primary-border: 199 89% 92%;
+  --accent: 210 64% 56%;
+  --accent-foreground: 0 0% 100%;
+  --accent-light: 210 60% 95%;
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: 215 25% 15%;
+  --muted: #ececf0;
+  --muted-foreground: 215 16% 47%;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: 214 32% 91%;
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --section-bg: 210 20% 98%;
+  --section-border: 214 32% 91%;
+  --surface-dark: 210 28% 10%;
+  --surface-dark-border: 210 20% 18%;
+  --surface-dark-foreground: 210 20% 92%;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: 215 25% 15%;
+  --sidebar-primary: 185 93% 51%;
+  --sidebar-primary-foreground: 0 0% 9%;
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: 215 25% 15%;
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.argo-about-page.argo-about-page--dark,
+.dark .argo-about-page {
+  --background: 210 22% 16%;
+  --foreground: 210 20% 98%;
+  --card: 210 22% 16%;
+  --card-foreground: 210 20% 98%;
+  --popover: 210 22% 16%;
+  --popover-foreground: 210 20% 98%;
+  --primary: 185 93% 51%;
+  --primary-foreground: 0 0% 9%;
+  --secondary: 210 18% 22%;
+  --secondary-foreground: 210 20% 98%;
+  --muted: 210 18% 22%;
+  --muted-foreground: 210 15% 65%;
+  --accent: 210 64% 56%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: 210 18% 28%;
+  --input: 210 18% 22%;
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: 210 20% 14%;
+  --sidebar-foreground: 210 20% 98%;
+  --sidebar-primary: 185 93% 51%;
+  --sidebar-primary-foreground: 0 0% 9%;
+  --sidebar-accent: 210 18% 22%;
+  --sidebar-accent-foreground: 210 20% 98%;
+  --sidebar-border: 210 18% 28%;
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: hsl(var(--foreground));
+  --color-card: var(--card);
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: var(--popover);
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: var(--muted);
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: hsl(var(--border));
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  .argo-about-page,
+  .argo-about-page * {
+    @apply border-border outline-ring/50;
+  }
+
+  .argo-about-page {
+    @apply bg-background text-foreground;
+    font-size: var(--font-size);
+  }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are scoped to the about wrapper so the host app keeps full control outside it.
+  */
+
+  .argo-about-page h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  .argo-about-page h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  .argo-about-page h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  .argo-about-page h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  .argo-about-page label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  .argo-about-page button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  .argo-about-page input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
