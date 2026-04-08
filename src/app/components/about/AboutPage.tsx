@@ -27,7 +27,7 @@ export function AboutPage() {
           inset: 0,
           pointerEvents: 'none',
           background:
-            'radial-gradient(circle at 12% 10%, rgba(70, 143, 215, 0.08), transparent 28%), radial-gradient(circle at 82% 18%, rgba(13, 227, 246, 0.08), transparent 24%), radial-gradient(circle at 20% 72%, rgba(70, 143, 215, 0.06), transparent 26%), radial-gradient(circle at 86% 84%, rgba(13, 227, 246, 0.06), transparent 22%)',
+            'radial-gradient(circle at 12% 10%, rgba(4, 116, 196, 0.08), transparent 28%), radial-gradient(circle at 82% 18%, rgba(4, 116, 196, 0.08), transparent 24%), radial-gradient(circle at 20% 72%, rgba(4, 116, 196, 0.06), transparent 26%), radial-gradient(circle at 86% 84%, rgba(4, 116, 196, 0.06), transparent 22%)',
         }}
       />
       <div style={{ position: 'relative', zIndex: 1 }}>

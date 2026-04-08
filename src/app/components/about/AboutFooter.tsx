@@ -10,7 +10,7 @@ export function AboutFooter() {
       className="relative overflow-hidden border-t border-white/10"
       style={{
         background:
-          'linear-gradient(180deg, #5a93cf 0%, #74a7d8 36%, #9ec3e6 72%, #d2e4f3 100%)',
+          'linear-gradient(180deg, #0474c4 0%, #2b8bd2 36%, #6fb1e0 72%, #cfe5f5 100%)',
       }}
     >
       <div
@@ -40,7 +40,7 @@ export function AboutFooter() {
           position: 'absolute',
           inset: 0,
           background:
-            'radial-gradient(circle at 18% 18%, rgba(255,255,255,0.14), transparent 0 18%), radial-gradient(circle at 82% 14%, rgba(13,227,246,0.12), transparent 0 16%), radial-gradient(circle at 70% 82%, rgba(255,255,255,0.10), transparent 0 20%)',
+            'radial-gradient(circle at 18% 18%, rgba(255,255,255,0.14), transparent 0 18%), radial-gradient(circle at 82% 14%, rgba(4,116,196,0.12), transparent 0 16%), radial-gradient(circle at 70% 82%, rgba(255,255,255,0.10), transparent 0 20%)',
           pointerEvents: 'none',
         }}
       />

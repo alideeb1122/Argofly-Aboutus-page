@@ -175,8 +175,8 @@ function AirlinePill({ airline }: { airline: Airline }) {
         const el = e.currentTarget as HTMLDivElement;
         el.style.opacity = '1';
         el.style.transform = 'translateY(-2px)';
-        el.style.borderColor = 'rgba(13, 227, 246, 0.32)';
-        el.style.boxShadow = '0 16px 34px rgba(70, 143, 215, 0.12), inset 0 1px 0 rgba(255,255,255,0.72)';
+        el.style.borderColor = 'rgba(4, 116, 196, 0.32)';
+        el.style.boxShadow = '0 16px 34px rgba(4, 116, 196, 0.12), inset 0 1px 0 rgba(255,255,255,0.72)';
       }}
       onMouseLeave={(e) => {
         const el = e.currentTarget as HTMLDivElement;
@@ -192,7 +192,7 @@ function AirlinePill({ airline }: { airline: Airline }) {
           position: 'absolute',
           inset: 0,
           background:
-            'radial-gradient(circle at 18% 20%, rgba(13,227,246,0.12), transparent 20%), radial-gradient(circle at 82% 78%, rgba(70,143,215,0.08), transparent 24%)',
+            'radial-gradient(circle at 18% 20%, rgba(4,116,196,0.12), transparent 20%), radial-gradient(circle at 82% 78%, rgba(4,116,196,0.08), transparent 24%)',
           pointerEvents: 'none',
         }}
       />
@@ -299,7 +299,7 @@ export function AboutMarquee() {
               margin: 0,
             }}
           >
-            400+ Airline Partners
+            <span style={{ fontWeight: 800, color: 'hsl(var(--primary))' }}>+400</span>{' '}Airline Partners
           </h2>
         </motion.div>
       </div>

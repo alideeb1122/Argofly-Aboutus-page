@@ -5,7 +5,7 @@
 
 export const hero = {
   eyebrow: 'About ARGO Fly B2B',
-  headline: 'The Platform Behind\nGlobal Aviation Commerce',
+  headline: 'Leading the Future of Travel\n#1 Aviation Booking Engine in the Middle East.',
   body: 'We connect airlines, low-cost carriers and booking companies through enterprise-grade distribution infrastructure — built for scale, trusted for reliability.',
   imageAlt: 'Commercial aircraft against blue sky',
 };
@@ -125,11 +125,13 @@ export const timeline: Milestone[] = [
 ];
 
 export const cta = {
-  eyebrow: 'Work With Us',
-  headline: 'Ready to connect your\nbusiness to the platform?',
-  body: 'Get in touch with our partnerships team to explore how ARGO Fly B2B can integrate with your operations.',
-  primaryLabel: 'Request a Demo',
-  secondaryLabel: 'Contact Sales',
+  eyebrow: 'Company Resources',
+  headline: 'Our company profile',
+  body: 'Explore more about our journey, story, and achievements.',
+  primaryLabel: 'Download Company Profile',
+  secondaryLabel: 'Download User Guide',
+  primaryHref: '/downloads/company-profile.pdf',
+  secondaryHref: '/downloads/user-guide.pdf',
 };
 
 // Footer content

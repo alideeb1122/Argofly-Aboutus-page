@@ -24,36 +24,36 @@ const FEATURE_CARD_PATTERNS: Record<
 > = {
   intelligence: {
     background:
-      'linear-gradient(132deg, transparent 0 58%, rgba(255,255,255,0.42) 61%, transparent 66%), linear-gradient(145deg, transparent 0 70%, rgba(70,143,215,0.12) 72%, transparent 76%), linear-gradient(90deg, transparent 0 70%, rgba(70,143,215,0.12) 70.5% 71.2%, transparent 71.8%), linear-gradient(121deg, transparent 0 62%, rgba(13,227,246,0.12) 62.5% 63.2%, transparent 64%), radial-gradient(circle at 78% 34%, rgba(70,143,215,0.18) 0 1.5px, transparent 2px), radial-gradient(circle at 92% 52%, rgba(70,143,215,0.16) 0 1.5px, transparent 2px)',
-    accent: 'radial-gradient(circle at center, rgba(13,227,246,0.20), rgba(70,143,215,0.06) 58%, transparent 76%)',
+      'linear-gradient(132deg, transparent 0 58%, rgba(255,255,255,0.42) 61%, transparent 66%), linear-gradient(145deg, transparent 0 70%, rgba(4,116,196,0.12) 72%, transparent 76%), linear-gradient(90deg, transparent 0 70%, rgba(4,116,196,0.12) 70.5% 71.2%, transparent 71.8%), linear-gradient(121deg, transparent 0 62%, rgba(4,116,196,0.12) 62.5% 63.2%, transparent 64%), radial-gradient(circle at 78% 34%, rgba(4,116,196,0.18) 0 1.5px, transparent 2px), radial-gradient(circle at 92% 52%, rgba(4,116,196,0.16) 0 1.5px, transparent 2px)',
+    accent: 'radial-gradient(circle at center, rgba(4,116,196,0.20), rgba(4,116,196,0.06) 58%, transparent 76%)',
     position: 'right top',
     size: '100% 100%',
   },
   flexibility: {
     background:
-      'linear-gradient(128deg, transparent 0 54%, rgba(255,255,255,0.40) 57%, transparent 62%), linear-gradient(156deg, transparent 0 64%, rgba(70,143,215,0.12) 66%, transparent 71%), linear-gradient(106deg, transparent 0 59%, rgba(13,227,246,0.11) 59.5% 60.2%, transparent 61%), linear-gradient(90deg, transparent 0 74%, rgba(70,143,215,0.10) 74.5% 75.2%, transparent 76%), radial-gradient(circle at 74% 66%, rgba(70,143,215,0.14) 0 1.5px, transparent 2px), radial-gradient(circle at 90% 40%, rgba(70,143,215,0.14) 0 1.5px, transparent 2px)',
-    accent: 'radial-gradient(circle at center, rgba(70,143,215,0.18), rgba(13,227,246,0.05) 60%, transparent 78%)',
+      'linear-gradient(128deg, transparent 0 54%, rgba(255,255,255,0.40) 57%, transparent 62%), linear-gradient(156deg, transparent 0 64%, rgba(4,116,196,0.12) 66%, transparent 71%), linear-gradient(106deg, transparent 0 59%, rgba(4,116,196,0.11) 59.5% 60.2%, transparent 61%), linear-gradient(90deg, transparent 0 74%, rgba(4,116,196,0.10) 74.5% 75.2%, transparent 76%), radial-gradient(circle at 74% 66%, rgba(4,116,196,0.14) 0 1.5px, transparent 2px), radial-gradient(circle at 90% 40%, rgba(4,116,196,0.14) 0 1.5px, transparent 2px)',
+    accent: 'radial-gradient(circle at center, rgba(4,116,196,0.18), rgba(4,116,196,0.05) 60%, transparent 78%)',
     position: 'right center',
     size: '100% 100%',
   },
   coverage: {
     background:
-      'linear-gradient(134deg, transparent 0 52%, rgba(255,255,255,0.42) 55%, transparent 60%), linear-gradient(118deg, transparent 0 64%, rgba(70,143,215,0.11) 64.5% 65.2%, transparent 66%), linear-gradient(151deg, transparent 0 56%, rgba(13,227,246,0.11) 56.5% 57.2%, transparent 58%), linear-gradient(90deg, transparent 0 74%, rgba(70,143,215,0.10) 74.6% 75.4%, transparent 76.2%), radial-gradient(circle at 74% 34%, rgba(70,143,215,0.16) 0 1.5px, transparent 2px), radial-gradient(circle at 92% 46%, rgba(70,143,215,0.16) 0 1.5px, transparent 2px), radial-gradient(circle at 82% 78%, rgba(70,143,215,0.16) 0 1.5px, transparent 2px)',
-    accent: 'radial-gradient(circle at center, rgba(13,227,246,0.18), rgba(70,143,215,0.05) 62%, transparent 80%)',
+      'linear-gradient(134deg, transparent 0 52%, rgba(255,255,255,0.42) 55%, transparent 60%), linear-gradient(118deg, transparent 0 64%, rgba(4,116,196,0.11) 64.5% 65.2%, transparent 66%), linear-gradient(151deg, transparent 0 56%, rgba(4,116,196,0.11) 56.5% 57.2%, transparent 58%), linear-gradient(90deg, transparent 0 74%, rgba(4,116,196,0.10) 74.6% 75.4%, transparent 76.2%), radial-gradient(circle at 74% 34%, rgba(4,116,196,0.16) 0 1.5px, transparent 2px), radial-gradient(circle at 92% 46%, rgba(4,116,196,0.16) 0 1.5px, transparent 2px), radial-gradient(circle at 82% 78%, rgba(4,116,196,0.16) 0 1.5px, transparent 2px)',
+    accent: 'radial-gradient(circle at center, rgba(4,116,196,0.18), rgba(4,116,196,0.05) 62%, transparent 80%)',
     position: 'right center',
     size: '100% 100%',
   },
   security: {
     background:
-      'linear-gradient(132deg, transparent 0 54%, rgba(255,255,255,0.38) 57%, transparent 62%), linear-gradient(180deg, transparent 0 36%, rgba(70,143,215,0.10) 36.5% 37.3%, transparent 38% 63%, rgba(70,143,215,0.10) 63.5% 64.3%, transparent 65%), linear-gradient(90deg, transparent 0 76%, rgba(70,143,215,0.11) 76.4% 77.2%, transparent 78%), linear-gradient(118deg, transparent 0 61%, rgba(13,227,246,0.10) 61.5% 62.2%, transparent 63%), radial-gradient(circle at 82% 48%, rgba(70,143,215,0.16) 0 1.5px, transparent 2px)',
-    accent: 'radial-gradient(circle at center, rgba(70,143,215,0.18), rgba(13,227,246,0.04) 62%, transparent 80%)',
+      'linear-gradient(132deg, transparent 0 54%, rgba(255,255,255,0.38) 57%, transparent 62%), linear-gradient(180deg, transparent 0 36%, rgba(4,116,196,0.10) 36.5% 37.3%, transparent 38% 63%, rgba(4,116,196,0.10) 63.5% 64.3%, transparent 65%), linear-gradient(90deg, transparent 0 76%, rgba(4,116,196,0.11) 76.4% 77.2%, transparent 78%), linear-gradient(118deg, transparent 0 61%, rgba(4,116,196,0.10) 61.5% 62.2%, transparent 63%), radial-gradient(circle at 82% 48%, rgba(4,116,196,0.16) 0 1.5px, transparent 2px)',
+    accent: 'radial-gradient(circle at center, rgba(4,116,196,0.18), rgba(4,116,196,0.04) 62%, transparent 80%)',
     position: 'right top',
     size: '100% 100%',
   },
   analytics: {
     background:
-      'linear-gradient(136deg, transparent 0 53%, rgba(255,255,255,0.40) 56%, transparent 61%), linear-gradient(180deg, transparent 0 54%, rgba(70,143,215,0.10) 54.5% 55.3%, transparent 56.2% 100%), linear-gradient(150deg, transparent 0 50%, rgba(70,143,215,0.12) 50.5% 51.3%, transparent 52.2% 100%), linear-gradient(114deg, transparent 0 64%, rgba(13,227,246,0.10) 64.5% 65.2%, transparent 66%), radial-gradient(circle at 80% 68%, rgba(70,143,215,0.16) 0 1.5px, transparent 2px), radial-gradient(circle at 91% 42%, rgba(70,143,215,0.14) 0 1.5px, transparent 2px)',
-    accent: 'radial-gradient(circle at center, rgba(13,227,246,0.18), rgba(70,143,215,0.05) 60%, transparent 78%)',
+      'linear-gradient(136deg, transparent 0 53%, rgba(255,255,255,0.40) 56%, transparent 61%), linear-gradient(180deg, transparent 0 54%, rgba(4,116,196,0.10) 54.5% 55.3%, transparent 56.2% 100%), linear-gradient(150deg, transparent 0 50%, rgba(4,116,196,0.12) 50.5% 51.3%, transparent 52.2% 100%), linear-gradient(114deg, transparent 0 64%, rgba(4,116,196,0.10) 64.5% 65.2%, transparent 66%), radial-gradient(circle at 80% 68%, rgba(4,116,196,0.16) 0 1.5px, transparent 2px), radial-gradient(circle at 91% 42%, rgba(4,116,196,0.14) 0 1.5px, transparent 2px)',
+    accent: 'radial-gradient(circle at center, rgba(4,116,196,0.18), rgba(4,116,196,0.05) 60%, transparent 78%)',
     position: 'right bottom',
     size: '100% 100%',
   },
@@ -92,14 +92,15 @@ export function AboutFeatures() {
               alt=""
               aria-hidden="true"
               className="absolute inset-0 h-full w-full object-cover opacity-[0.55]"
+              style={{ objectPosition: 'center center' }}
             />
-            <div aria-hidden="true" className="absolute inset-0 bg-[#2f5f93]/30" />
+            <div aria-hidden="true" className="absolute inset-0 bg-[#0474c4]/30" />
             <div
               aria-hidden="true"
               className="absolute inset-0"
               style={{
                 background:
-                  'linear-gradient(180deg, rgba(70,143,215,0.93) 0%, rgba(88,151,214,0.86) 48%, rgba(208,227,246,0.80) 100%)',
+                  'linear-gradient(180deg, rgba(4,116,196,0.93) 0%, rgba(36,126,201,0.86) 48%, rgba(191,221,244,0.80) 100%)',
               }}
             />
             <div
@@ -117,26 +118,26 @@ export function AboutFeatures() {
             <div className="relative z-10 flex flex-col gap-7">
               <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-sm transition-all duration-300 ease-out before:pointer-events-none before:absolute before:inset-0 before:rounded-2xl before:bg-[linear-gradient(110deg,transparent_35%,rgba(255,255,255,0.06)_50%,transparent_65%)] before:opacity-0 before:transition-opacity before:duration-500 hover:-translate-y-0.5 hover:border-white/25 hover:shadow-[0_0_24px_rgba(255,255,255,0.06)] hover:before:opacity-100">
                 {data.label && (
-                  <p className="text-xs font-semibold uppercase tracking-widest text-white/70">
+                  <p className="inline-flex w-fit items-center rounded-full border border-white/55 bg-white/90 px-3 py-1 text-[0.72rem] font-bold uppercase tracking-[0.16em] text-[hsl(var(--primary))] shadow-[0_6px_18px_rgba(4,116,196,0.14)]">
                     {data.label}
                   </p>
                 )}
-                <h2 className="font-display text-4xl font-bold tracking-tight text-[#f3f7fb] drop-shadow-[0_1px_1px_rgba(0,0,0,0.28)] md:text-5xl">
+                <h2 className="font-display text-4xl font-bold tracking-tight leading-[1.08] text-[#f3f7fb] drop-shadow-[0_1px_1px_rgba(0,0,0,0.28)] md:text-5xl">
                   {data.heading}
                 </h2>
-                <p className="max-w-md text-sm leading-relaxed text-[#eaf3fb]/85 md:text-base">
+                <p className="mt-3 max-w-lg text-sm leading-[1.85] text-[#eaf3fb]/85 md:text-base">
                   {data.intro}
                 </p>
 
-                <p className="max-w-md text-sm leading-relaxed text-white/75 md:text-base">
+                <p className="mt-2 max-w-lg text-sm leading-[1.9] text-white/75 md:text-base">
                   Designed to empower travel professionals with scalable technology, automation, and
                   real-time operational control.
                 </p>
 
-                <div className="mt-6 flex items-center gap-4 text-sm text-white/75">
-                  <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#e1dd5a]/25 text-[0.7rem] font-semibold text-[#e1dd5a]">
-                    400+
-                  </span>
+                  <div className="mt-8 flex items-center gap-5 text-sm leading-relaxed text-white/75">
+                    <span className="font-display inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#e1dd5a]/24 text-[0.92rem] font-medium tracking-[-0.01em] text-[#f3ee9b] drop-shadow-[0_1px_2px_rgba(0,0,0,0.18)]">
+                      400+
+                    </span>
                   <span>airlines, hotels, and services unified in one modern platform.</span>
                 </div>
               </div>
@@ -200,7 +201,7 @@ export function AboutFeatures() {
                       'transform-gpu',
                       isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6',
                       highlight && 'border-primary/20 shadow-lg',
-                      'hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_16px_34px_rgba(70,143,215,0.12)]',
+                      'hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_16px_34px_rgba(4,116,196,0.12)]',
                     )}
                     style={{
                       transitionDelay: isVisible && !prefersReducedMotion ? `${index * 80}ms` : '0ms',

@@ -10,7 +10,7 @@ const CARD_IMAGES: Record<string, string> = {
   vision:
     'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1400&q=80',
   values:
-    'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=80',
+    'https://images.pexels.com/photos/1181715/pexels-photo-1181715.jpeg?auto=compress&cs=tinysrgb&w=1400',
 };
 
 const CARD_IMAGE_POSITIONS: Record<string, string> = {
@@ -260,7 +260,7 @@ function ValueCard({ card, index }: { card: (typeof values)[0]; index: number })
             position: 'absolute',
             inset: 0,
             background:
-              'linear-gradient(135deg, rgba(13,227,246,0.10) 0%, rgba(70,143,215,0.04) 44%, transparent 80%)',
+              'linear-gradient(135deg, rgba(4,116,196,0.10) 0%, rgba(4,116,196,0.04) 44%, transparent 80%)',
           }}
         />
         <div
@@ -319,12 +319,12 @@ function ValueCard({ card, index }: { card: (typeof values)[0]; index: number })
         <div
           style={{
             fontFamily: "'Space Grotesk', sans-serif",
-            fontWeight: 500,
-            fontSize: '0.62rem',
-            letterSpacing: '0.22em',
+            fontWeight: 600,
+            fontSize: '0.84rem',
+            letterSpacing: '0.24em',
             textTransform: 'uppercase',
-            color: 'hsl(var(--primary))',
-            marginBottom: '0.65rem',
+            color: 'hsl(var(--primary) / 0.88)',
+            marginBottom: '0.8rem',
             textAlign: 'center',
           }}
         >

@@ -1,39 +1,62 @@
 import { motion } from 'motion/react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 import { hero } from '../../data/about';
+import heroPlaneImage from '../../../assets/hero-plane.jpg';
 
-const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1764197419756-4defd13253bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1400&q=85';
+const HERO_IMAGE = heroPlaneImage;
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const HERO_CSS = `
-  .argo-about-hero { display: flex; align-items: stretch; min-height: 580px; }
+  .argo-about-hero { position: relative; min-height: 580px; }
   .argo-about-hero-text {
-    flex: 0 0 55%;
+    position: relative;
+    z-index: 2;
     display: flex; flex-direction: column; justify-content: center;
+    width: min(56%, 860px);
     padding: clamp(5rem,9vw,8rem) clamp(2rem,5vw,5rem) clamp(4rem,8vw,7rem) clamp(2rem,6vw,7rem);
   }
-  .argo-about-hero-image {
-    flex: 0 0 45%;
-    position: relative; overflow: hidden; min-height: 100%;
-  }
+  .argo-about-hero-bg { position: absolute; inset: 0; overflow: hidden; }
   @media (max-width: 767px) {
-    .argo-about-hero { flex-direction: column; }
-    .argo-about-hero-text { flex: none; padding: 4rem 1.5rem 2.5rem; }
-    .argo-about-hero-image { flex: none; height: 260px; min-height: unset; }
+    .argo-about-hero { min-height: 560px; }
+    .argo-about-hero-text { width: 100%; padding: 4.2rem 1.5rem 3rem; }
   }
 `;
 
 export function AboutHero() {
+  const [headlinePrimary, ...headlineSecondaryParts] = hero.headline.split('\n');
+  const headlineSecondary = headlineSecondaryParts.join('\n').trim();
+  const secondarySplit = headlineSecondary.split('#1');
+
   return (
     <section style={{ position: 'relative', backgroundColor: 'transparent', overflow: 'hidden' }}>
       <style dangerouslySetInnerHTML={{ __html: HERO_CSS }} />
 
       <div className="argo-about-hero">
-        {/* ── Left: text ── */}
+        <div className="argo-about-hero-bg" aria-hidden="true">
+          <ImageWithFallback
+            src={HERO_IMAGE}
+            alt={hero.imageAlt}
+            style={{
+              position: 'absolute',
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: '68% 45%',
+            }}
+          />
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background:
+                'linear-gradient(90deg, rgba(218,231,244,0.90) 0%, rgba(218,231,244,0.76) 26%, rgba(218,231,244,0.44) 48%, rgba(218,231,244,0.12) 70%, transparent 100%), linear-gradient(180deg, rgba(4,116,196,0.10) 0%, rgba(4,116,196,0.03) 40%, rgba(4,116,196,0.00) 100%)',
+            }}
+          />
+        </div>
+
         <div className="argo-about-hero-text">
-          {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
@@ -44,9 +67,9 @@ export function AboutHero() {
             <span
               style={{
                 fontFamily: "'Space Grotesk', sans-serif",
-                fontWeight: 500,
-                fontSize: '0.65rem',
-                letterSpacing: '0.26em',
+                fontWeight: 700,
+                fontSize: '0.9rem',
+                letterSpacing: '0.24em',
                 textTransform: 'uppercase',
                 color: 'hsl(var(--primary))',
               }}
@@ -55,7 +78,6 @@ export function AboutHero() {
             </span>
           </motion.div>
 
-          {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
@@ -67,14 +89,39 @@ export function AboutHero() {
               lineHeight: 1.1,
               letterSpacing: '-0.025em',
               color: 'hsl(var(--foreground))',
-              whiteSpace: 'pre-line',
               margin: 0,
             }}
           >
-            {hero.headline}
+            {headlineSecondary ? (
+              <>
+                <span style={{ display: 'block', fontWeight: 700 }}>{headlinePrimary}</span>
+                <span
+                  style={{
+                    display: 'block',
+                    marginTop: '0.45rem',
+                    fontWeight: 400,
+                    fontSize: 'clamp(1.1rem, 2.3vw, 2.05rem)',
+                    lineHeight: 1.2,
+                    letterSpacing: '-0.01em',
+                    color: 'hsl(var(--muted-foreground))',
+                  }}
+                >
+                  {secondarySplit.length > 1 ? (
+                    <>
+                      {secondarySplit[0]}
+                      <span style={{ fontWeight: 700, color: 'hsl(var(--primary))' }}>#1</span>
+                      {secondarySplit.slice(1).join('#1')}
+                    </>
+                  ) : (
+                    headlineSecondary
+                  )}
+                </span>
+              </>
+            ) : (
+              headlinePrimary
+            )}
           </motion.h1>
 
-          {/* Body */}
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -92,7 +139,6 @@ export function AboutHero() {
             {hero.body}
           </motion.p>
 
-          {/* Yellow accent rule */}
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
@@ -107,37 +153,6 @@ export function AboutHero() {
             }}
           />
         </div>
-
-        {/* ── Right: image ── */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.0, delay: 0.1, ease }}
-          className="argo-about-hero-image"
-        >
-          <ImageWithFallback
-            src={HERO_IMAGE}
-            alt={hero.imageAlt}
-            style={{
-              position: 'absolute',
-              inset: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'center',
-            }}
-          />
-          {/* Soft left-edge blend */}
-          <div
-            aria-hidden="true"
-            style={{
-              position: 'absolute',
-              inset: 0,
-              background:
-                'linear-gradient(90deg, var(--background) 0%, rgba(255,255,255,0.08) 22%, transparent 100%)',
-            }}
-          />
-        </motion.div>
       </div>
     </section>
   );

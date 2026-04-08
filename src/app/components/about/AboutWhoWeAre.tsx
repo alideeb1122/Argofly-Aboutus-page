@@ -2,9 +2,10 @@ import { useRef } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'motion/react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 import { whoWeAre } from '../../data/about';
+import whoWeArePlaneImage from '../../../assets/who-we-are-paper-plane.jpg';
 
 const SIDE_IMAGE =
-  'https://images.unsplash.com/photo-1583150647472-d239652a12f5?auto=format&fit=crop&w=1800&q=85'
+  whoWeArePlaneImage;
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -48,9 +49,9 @@ export function AboutWhoWeAre() {
             <span
               style={{
                 fontFamily: "'Space Grotesk', sans-serif",
-                fontWeight: 600,
-                fontSize: '0.75rem',
-                letterSpacing: '0.32em',
+                fontWeight: 700,
+                fontSize: '0.96rem',
+                letterSpacing: '0.24em',
                 textTransform: 'uppercase',
                 color: 'hsl(var(--primary))',
               }}
@@ -131,7 +132,7 @@ export function AboutWhoWeAre() {
               <ImageWithFallback
                 src={SIDE_IMAGE}
                 alt="Aviation technology and booking infrastructure"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: 12 }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '82% 58%', display: 'block', borderRadius: 12 }}
               />
             </motion.div>
           </div>

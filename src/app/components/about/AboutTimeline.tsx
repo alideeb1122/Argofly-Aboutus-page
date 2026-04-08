@@ -17,10 +17,10 @@ const TIMELINE_CARD_IMAGES = [
 
 const TIMELINE_CARD_PATTERN = `
   linear-gradient(135deg, rgba(10, 30, 54, 0.18) 0%, rgba(55, 109, 165, 0.10) 36%, rgba(255, 255, 255, 0.02) 68%),
-  radial-gradient(circle at 18% 22%, rgba(13, 227, 246, 0.18), transparent 0 24%),
-  radial-gradient(circle at 82% 78%, rgba(70, 143, 215, 0.16), transparent 0 20%),
-  linear-gradient(115deg, rgba(70, 143, 215, 0.10) 0 1px, transparent 1px 100%),
-  linear-gradient(25deg, rgba(13, 227, 246, 0.09) 0 1px, transparent 1px 100%)
+  radial-gradient(circle at 18% 22%, rgba(4, 116, 196, 0.18), transparent 0 24%),
+  radial-gradient(circle at 82% 78%, rgba(4, 116, 196, 0.16), transparent 0 20%),
+  linear-gradient(115deg, rgba(4, 116, 196, 0.10) 0 1px, transparent 1px 100%),
+  linear-gradient(25deg, rgba(4, 116, 196, 0.09) 0 1px, transparent 1px 100%)
 `;
 
 // ─── Desktop milestone (alternating sides) ────────────────────
@@ -67,7 +67,7 @@ function DesktopMilestone({
               position: 'relative',
               overflow: 'hidden',
               boxShadow: hovered
-                ? '0 18px 44px rgba(70, 143, 215, 0.14), 0 4px 14px rgba(15, 23, 42, 0.08)'
+                ? '0 18px 44px rgba(4, 116, 196, 0.14), 0 4px 14px rgba(15, 23, 42, 0.08)'
                 : '0 6px 18px rgba(15, 23, 42, 0.05)',
               transform: hovered ? 'translateY(-3px)' : 'translateY(0)',
               transition: 'box-shadow 0.35s ease, transform 0.35s ease, border-color 0.35s ease',
@@ -195,7 +195,7 @@ function DesktopMilestone({
               position: 'relative',
               overflow: 'hidden',
               boxShadow: hovered
-                ? '0 18px 44px rgba(70, 143, 215, 0.14), 0 4px 14px rgba(15, 23, 42, 0.08)'
+                ? '0 18px 44px rgba(4, 116, 196, 0.14), 0 4px 14px rgba(15, 23, 42, 0.08)'
                 : '0 6px 18px rgba(15, 23, 42, 0.05)',
               transform: hovered ? 'translateY(-3px)' : 'translateY(0)',
               transition: 'box-shadow 0.35s ease, transform 0.35s ease, border-color 0.35s ease',
@@ -292,7 +292,7 @@ function MobileMilestone({ m, index }: { m: (typeof timeline)[0]; index: number 
         overflow: 'hidden',
         backgroundColor: 'rgba(255,255,255,0.72)',
         boxShadow: hovered
-          ? '0 18px 44px rgba(70, 143, 215, 0.14), 0 4px 14px rgba(15, 23, 42, 0.08)'
+          ? '0 18px 44px rgba(4, 116, 196, 0.14), 0 4px 14px rgba(15, 23, 42, 0.08)'
           : '0 6px 18px rgba(15, 23, 42, 0.05)',
         transform: hovered ? 'translateY(-3px)' : 'translateY(0)',
         transition: 'box-shadow 0.35s ease, transform 0.35s ease',
@@ -474,7 +474,7 @@ export function AboutTimeline() {
               transform: 'translateX(-50%)',
               background:
                 'linear-gradient(180deg, rgba(188, 208, 227, 0.72) 0%, rgba(205, 221, 236, 0.82) 100%)',
-              boxShadow: '0 0 0 1px rgba(255,255,255,0.55), 0 0 18px rgba(70, 143, 215, 0.08)',
+              boxShadow: '0 0 0 1px rgba(255,255,255,0.55), 0 0 18px rgba(4, 116, 196, 0.08)',
               borderRadius: 999,
               overflow: 'hidden',
             }}
@@ -489,8 +489,8 @@ export function AboutTimeline() {
                 right: 0,
                 bottom: 0,
                 background:
-                  'linear-gradient(180deg, rgba(13, 227, 246, 0.96) 0%, rgba(70, 143, 215, 0.94) 58%, rgba(39, 115, 201, 0.92) 100%)',
-                boxShadow: '0 0 14px rgba(13, 227, 246, 0.22), 0 0 24px rgba(70, 143, 215, 0.18)',
+                  'linear-gradient(180deg, rgba(4, 116, 196, 0.96) 0%, rgba(4, 116, 196, 0.94) 58%, rgba(39, 115, 201, 0.92) 100%)',
+                boxShadow: '0 0 14px rgba(4, 116, 196, 0.22), 0 0 24px rgba(4, 116, 196, 0.18)',
                 transformOrigin: 'top center',
               }}
             />
@@ -515,8 +515,8 @@ export function AboutTimeline() {
                 width: 2,
                 height: 92,
                 backgroundImage:
-                  'repeating-linear-gradient(to bottom, rgba(70, 143, 215, 0.88) 0 9px, rgba(70, 143, 215, 0.88) 9px 10px, transparent 10px 17px)',
-                boxShadow: '0 0 14px rgba(70, 143, 215, 0.14)',
+                  'repeating-linear-gradient(to bottom, rgba(4, 116, 196, 0.88) 0 9px, rgba(4, 116, 196, 0.88) 9px 10px, transparent 10px 17px)',
+                boxShadow: '0 0 14px rgba(4, 116, 196, 0.14)',
                 borderRadius: 999,
                 opacity: 0.9,
               }}
@@ -539,8 +539,8 @@ export function AboutTimeline() {
               marginTop: '-0.05rem',
               marginBottom: '0.9rem',
               backgroundImage:
-                'repeating-linear-gradient(to bottom, rgba(70, 143, 215, 0.86) 0 8px, rgba(70, 143, 215, 0.86) 8px 9px, transparent 9px 15px)',
-              boxShadow: '0 0 12px rgba(70, 143, 215, 0.12)',
+                'repeating-linear-gradient(to bottom, rgba(4, 116, 196, 0.86) 0 8px, rgba(4, 116, 196, 0.86) 8px 9px, transparent 9px 15px)',
+              boxShadow: '0 0 12px rgba(4, 116, 196, 0.12)',
               borderRadius: 999,
               opacity: 0.88,
             }}
