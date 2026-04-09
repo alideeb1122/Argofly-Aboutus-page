@@ -1,10 +1,9 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { cta } from '../../data/about';
+import companyProfileMockup from '../../../assets/company-profile-mockup.jpg';
 
 const ease = [0.22, 1, 0.36, 1] as const;
-const SUPPORT_IMAGE =
-  'https://images.pexels.com/photos/3182763/pexels-photo-3182763.jpeg?auto=compress&cs=tinysrgb&w=2000&h=500&fit=crop';
 
 export function AboutCTA() {
   const ref = useRef<HTMLElement>(null);
@@ -35,23 +34,10 @@ export function AboutCTA() {
         }}
       >
         <motion.div {...stagger(0)} style={{ marginBottom: '1.5rem' }}>
-          <p
-            style={{
-              margin: 0,
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontWeight: 700,
-              fontSize: '0.74rem',
-              letterSpacing: '0.2em',
-              textTransform: 'uppercase',
-              color: 'hsl(var(--primary))',
-            }}
-          >
-            {cta.eyebrow}
-          </p>
           <h3
             style={{
-              margin: '0.75rem 0 0',
-              fontFamily: "'Space Grotesk', sans-serif",
+              margin: 0,
+              fontFamily: "'Sora', sans-serif",
               fontSize: 'clamp(2rem,4.2vw,3rem)',
               lineHeight: 1.08,
               letterSpacing: '-0.02em',
@@ -64,7 +50,7 @@ export function AboutCTA() {
           <p
             style={{
               margin: '0.9rem 0 0',
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Manrope', sans-serif",
               fontSize: 'clamp(1rem,1.45vw,1.12rem)',
               lineHeight: 1.65,
               color: 'hsl(var(--muted-foreground))',
@@ -83,8 +69,8 @@ export function AboutCTA() {
             borderRadius: 26,
             border: '1px solid rgba(4,116,196,0.24)',
             background:
-              'linear-gradient(104deg, rgba(228,243,254,0.95) 0%, rgba(237,248,255,0.96) 42%, rgba(211,237,252,0.92) 74%, rgba(191,229,250,0.90) 100%)',
-            boxShadow: '0 18px 42px rgba(4,116,196,0.10)',
+              'linear-gradient(112deg, rgba(232,238,246,0.96) 0%, rgba(229,237,246,0.95) 36%, rgba(214,231,246,0.93) 72%, rgba(202,226,245,0.92) 100%)',
+            boxShadow: '0 18px 42px rgba(20,77,122,0.12)',
             minHeight: 250,
           }}
         >
@@ -94,7 +80,7 @@ export function AboutCTA() {
               position: 'absolute',
               inset: 0,
               background:
-                'linear-gradient(90deg, rgba(228,243,254,0.18) 0%, rgba(228,243,254,0.00) 30%, rgba(228,243,254,0.00) 100%)',
+                'linear-gradient(90deg, rgba(235,243,250,0.40) 0%, rgba(232,242,251,0.18) 30%, rgba(228,240,250,0.00) 62%)',
             }}
           />
           <div
@@ -113,7 +99,7 @@ export function AboutCTA() {
 
           <img
             className="hidden md:block"
-            src={SUPPORT_IMAGE}
+            src={companyProfileMockup}
             alt=""
             aria-hidden="true"
             style={{
@@ -122,8 +108,8 @@ export function AboutCTA() {
               width: '100%',
               height: '100%',
               objectFit: 'cover',
-              objectPosition: 'center 58%',
-              opacity: 0.74,
+              objectPosition: 'center 52%',
+              opacity: 0.7,
             }}
           />
           <div
@@ -132,7 +118,7 @@ export function AboutCTA() {
               position: 'absolute',
               inset: 0,
               background:
-                'linear-gradient(90deg, rgba(239,248,255,0.26) 0%, rgba(233,246,255,0.34) 32%, rgba(214,238,252,0.50) 64%, rgba(187,225,248,0.66) 100%)',
+                'linear-gradient(96deg, rgba(244,248,252,0.26) 0%, rgba(236,246,255,0.32) 30%, rgba(210,232,248,0.54) 64%, rgba(180,216,242,0.72) 100%)',
             }}
           />
 
@@ -165,7 +151,7 @@ export function AboutCTA() {
                   borderRadius: 999,
                   padding: '0.95rem 1.3rem',
                   textDecoration: 'none',
-                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontFamily: "'Sora', sans-serif",
                   fontWeight: 700,
                   fontSize: '0.95rem',
                   color: '#fff',
@@ -187,7 +173,7 @@ export function AboutCTA() {
                   borderRadius: 999,
                   padding: '0.95rem 1.3rem',
                   textDecoration: 'none',
-                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontFamily: "'Sora', sans-serif",
                   fontWeight: 700,
                   fontSize: '0.95rem',
                   color: 'hsl(var(--primary))',

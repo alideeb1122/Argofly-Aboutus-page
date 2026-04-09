@@ -76,17 +76,17 @@ export function AboutFeatures() {
     <section
       ref={ref}
       className={cn(
-        'w-full px-4 py-10 sm:px-6 sm:py-14 lg:py-16',
+        'w-full px-3 py-8 sm:px-5 sm:py-12 lg:px-6 lg:py-14',
         'transition-all duration-700 ease-out',
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4',
         prefersReducedMotion && 'opacity-100 translate-y-0',
       )}
     >
       <style dangerouslySetInnerHTML={{ __html: RADAR_CSS }} />
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto w-full max-w-[1360px]">
         <div className="grid grid-cols-1 gap-0 overflow-hidden rounded-3xl bg-[hsl(var(--surface-dark))] text-[hsl(var(--surface-dark-foreground))] shadow-[0_24px_80px_rgba(15,23,42,0.55)] lg:grid-cols-12">
           {/* Left panel */}
-          <div className="relative flex flex-col gap-7 overflow-hidden px-6 py-10 sm:px-8 lg:col-span-5 lg:py-14">
+          <div className="relative flex flex-col gap-5 overflow-hidden px-5 py-8 sm:px-7 lg:col-span-5 lg:min-h-[640px] lg:py-10">
             <img
               src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80"
               alt=""
@@ -115,35 +115,35 @@ export function AboutFeatures() {
                 `,
               }}
             />
-            <div className="relative z-10 flex flex-col gap-7">
-              <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-sm transition-all duration-300 ease-out before:pointer-events-none before:absolute before:inset-0 before:rounded-2xl before:bg-[linear-gradient(110deg,transparent_35%,rgba(255,255,255,0.06)_50%,transparent_65%)] before:opacity-0 before:transition-opacity before:duration-500 hover:-translate-y-0.5 hover:border-white/25 hover:shadow-[0_0_24px_rgba(255,255,255,0.06)] hover:before:opacity-100">
+            <div className="relative z-10 flex flex-col gap-5">
+              <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-sm">
                 {data.label && (
-                  <p className="inline-flex w-fit items-center rounded-full border border-white/55 bg-white/90 px-3 py-1 text-[0.72rem] font-bold uppercase tracking-[0.16em] text-[hsl(var(--primary))] shadow-[0_6px_18px_rgba(4,116,196,0.14)]">
+                  <p className="inline-flex w-fit items-center rounded-full border border-white/55 bg-white/90 px-4 py-1.5 text-[0.78rem] font-bold uppercase tracking-[0.18em] text-[hsl(var(--primary))] shadow-[0_6px_18px_rgba(4,116,196,0.14)]">
                     {data.label}
                   </p>
                 )}
-                <h2 className="font-display text-4xl font-bold tracking-tight leading-[1.08] text-[#f3f7fb] drop-shadow-[0_1px_1px_rgba(0,0,0,0.28)] md:text-5xl">
+                <h2 className="mt-3 font-display text-[clamp(2.25rem,3.2vw,3.55rem)] font-bold tracking-tight leading-[1.08] text-[#f3f7fb] drop-shadow-[0_1px_1px_rgba(0,0,0,0.28)]">
                   {data.heading}
                 </h2>
-                <p className="mt-3 max-w-lg text-sm leading-[1.85] text-[#eaf3fb]/85 md:text-base">
+                <p className="mt-3 max-w-lg text-sm leading-[1.75] text-[#eaf3fb]/85 md:text-[0.98rem]">
                   {data.intro}
                 </p>
 
-                <p className="mt-2 max-w-lg text-sm leading-[1.9] text-white/75 md:text-base">
+                <p className="mt-2 max-w-lg text-sm leading-[1.78] text-white/75 md:text-[0.98rem]">
                   Designed to empower travel professionals with scalable technology, automation, and
                   real-time operational control.
                 </p>
 
-                  <div className="mt-8 flex items-center gap-5 text-sm leading-relaxed text-white/75">
-                    <span className="font-display inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#e1dd5a]/24 text-[0.92rem] font-medium tracking-[-0.01em] text-[#f3ee9b] drop-shadow-[0_1px_2px_rgba(0,0,0,0.18)]">
-                      400+
-                    </span>
+                <div className="mt-6 flex items-center gap-4 text-sm leading-relaxed text-white/75">
+                  <span className="font-display inline-flex items-center text-[2.2rem] font-bold leading-none tracking-[-0.02em] text-[#f3ee9b] drop-shadow-[0_1px_2px_rgba(0,0,0,0.18)]">
+                    400+
+                  </span>
                   <span>airlines, hotels, and services unified in one modern platform.</span>
                 </div>
               </div>
 
-              <div className="mt-10 flex justify-center">
-                <div className="relative flex h-24 w-24 items-center justify-center">
+              <div className="mt-14 flex justify-center md:mt-16">
+                <div className="relative flex h-20 w-20 items-center justify-center">
                   <span className="absolute inset-0 rounded-full border border-white/35 animate-[ping_2.6s_ease-out_infinite]" />
                   <span className="absolute inset-2 rounded-full border border-white/30 animate-[ping_2.6s_ease-out_infinite] [animation-delay:0.7s]" />
                   <span className="absolute inset-4 rounded-full border border-white/25 animate-[ping_2.6s_ease-out_infinite] [animation-delay:1.4s]" />
@@ -187,20 +187,22 @@ export function AboutFeatures() {
           </div>
 
           {/* Right panel */}
-          <div className="bg-muted px-4 py-6 text-foreground sm:px-6 sm:py-8 lg:col-span-7">
-            <div className="space-y-3">
+          <div className="bg-muted/95 px-4 py-5 text-foreground sm:px-6 sm:py-6 lg:col-span-7 lg:px-6">
+            <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
               {data.items.map((item, index) => {
                 const icon = ICONS[item.iconKey];
                 const highlight = item.highlight;
+                const isLast = index === data.items.length - 1;
 
                 return (
                   <Card
                     key={item.title}
                     className={cn(
-                      'group relative flex items-start gap-4 overflow-hidden rounded-2xl border border-border bg-card px-4 py-4 shadow-sm transition-all duration-300 ease-out sm:px-5 sm:py-5',
+                      'group relative flex min-h-[172px] items-start gap-4 overflow-hidden rounded-2xl border border-border bg-card px-4 py-4 shadow-sm transition-all duration-300 ease-out sm:px-5 sm:py-5',
                       'transform-gpu',
                       isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6',
-                      highlight && 'border-primary/20 shadow-lg',
+                      highlight && 'border-primary/20',
+                      isLast && 'md:col-span-2',
                       'hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_16px_34px_rgba(4,116,196,0.12)]',
                     )}
                     style={{
@@ -250,10 +252,10 @@ export function AboutFeatures() {
                     </div>
 
                     <div className="relative z-10 space-y-1.5">
-                      <h3 className="font-display text-[0.98rem] font-semibold tracking-tight text-foreground">
+                      <h3 className="font-display text-[1.02rem] font-semibold tracking-tight text-foreground">
                         {item.title}
                       </h3>
-                      <p className="text-[0.86rem] leading-relaxed text-muted-foreground">
+                      <p className="text-[0.9rem] leading-relaxed text-muted-foreground">
                         {item.description}
                       </p>
                     </div>

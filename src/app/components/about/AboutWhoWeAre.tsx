@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'motion/react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 import { whoWeAre } from '../../data/about';
-import whoWeArePlaneImage from '../../../assets/who-we-are-paper-plane.jpg';
+import whoWeArePlaneImage from '../../../assets/who-we-are-hand-plane.jpg';
 
 const SIDE_IMAGE =
   whoWeArePlaneImage;
@@ -18,7 +18,7 @@ export function AboutWhoWeAre() {
     target: sectionRef,
     offset: ['start end', 'end start'],
   });
-  const imgY = useTransform(scrollYProgress, [0, 1], ['-8%', '8%']);
+  const imgY = useTransform(scrollYProgress, [0, 1], ['0%', '0%']);
 
   const stagger = (i: number) => ({
     initial: { opacity: 0, y: 24 },
@@ -44,14 +44,13 @@ export function AboutWhoWeAre() {
       >
         {/* Text column */}
         <div>
-          <motion.div {...stagger(0)} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: '1.4rem' }}>
-            <span style={{ display: 'block', width: 24, height: 2, backgroundColor: 'hsl(var(--primary))', flexShrink: 0 }} />
+          <motion.div {...stagger(0)} style={{ display: 'flex', alignItems: 'center', marginBottom: '1.4rem' }}>
             <span
               style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontWeight: 700,
-                fontSize: '0.96rem',
-                letterSpacing: '0.24em',
+                fontFamily: "'Sora', sans-serif",
+                fontWeight: 800,
+                fontSize: 'clamp(1.28rem, 1.95vw, 1.75rem)',
+                letterSpacing: '0.2em',
                 textTransform: 'uppercase',
                 color: 'hsl(var(--primary))',
               }}
@@ -60,33 +59,18 @@ export function AboutWhoWeAre() {
             </span>
           </motion.div>
 
-          <motion.h2
-            {...stagger(0.07)}
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontWeight: 700,
-              fontSize: 'clamp(1.8rem, 3.2vw, 2.8rem)',
-              lineHeight: 1.12,
-              letterSpacing: '-0.022em',
-              color: 'hsl(var(--foreground))',
-              whiteSpace: 'pre-line',
-              margin: '0 0 1.8rem',
-            }}
-          >
-            {whoWeAre.headline}
-          </motion.h2>
-
           {whoWeAre.paragraphs.map((p, i) => (
             <motion.p
               key={i}
-              {...stagger(0.14 + i * 0.08)}
+              {...stagger(0.08 + i * 0.08)}
               style={{
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Manrope', sans-serif",
                 fontWeight: 400,
-                fontSize: '0.97rem',
-                lineHeight: 1.8,
+                fontSize: 'clamp(1rem, 1.18vw, 1.1rem)',
+                lineHeight: 1.74,
                 color: 'hsl(var(--muted-foreground))',
-                marginBottom: '1rem',
+                marginBottom: '1.05rem',
+                maxWidth: 700,
               }}
             >
               {p}
@@ -101,8 +85,10 @@ export function AboutWhoWeAre() {
           transition={{ duration: 0.9, delay: 0.18, ease }}
           style={{
             position: 'relative',
-            height: 'clamp(300px, 42vw, 480px)',
+            width: 'min(100%, 560px)',
+            aspectRatio: '1 / 1',
             overflow: 'hidden',
+            justifySelf: 'center',
           }}
         >
           {/* Decorative border offset */}
@@ -128,11 +114,18 @@ export function AboutWhoWeAre() {
               boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
             }}
           >
-            <motion.div style={{ y: imgY, height: '116%', width: '100%', marginTop: '-8%' }}>
+            <motion.div style={{ y: imgY, height: '100%', width: '100%' }}>
               <ImageWithFallback
                 src={SIDE_IMAGE}
                 alt="Aviation technology and booking infrastructure"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '82% 58%', display: 'block', borderRadius: 12 }}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: '50% 66%',
+                  display: 'block',
+                  borderRadius: 12,
+                }}
               />
             </motion.div>
           </div>
