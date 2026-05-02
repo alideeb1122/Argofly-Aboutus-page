@@ -8,17 +8,38 @@ function useCountUp(target: number, active: boolean, duration = 1800) {
   const [value, setValue] = useState(0);
   useEffect(() => {
     if (!active) return;
+
+    const decimals = Number.isInteger(target)
+      ? 0
+      : (target.toString().split('.')[1]?.length ?? 0);
+
+    let raf = 0;
     let start: number | null = null;
-    const raf = requestAnimationFrame(function tick(ts) {
+
+    const tick = (ts: number) => {
       if (!start) start = ts;
       const pct = Math.min((ts - start) / duration, 1);
       const eased = 1 - Math.pow(1 - pct, 3); // cubic-out
-      setValue(Math.round(eased * target));
-      if (pct < 1) requestAnimationFrame(tick);
-    });
+      const next = eased * target;
+      setValue(Number(next.toFixed(decimals)));
+      if (pct < 1) raf = requestAnimationFrame(tick);
+    };
+
+    raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
   }, [target, active, duration]);
   return value;
+}
+
+function formatCount(value: number, target: number) {
+  const decimals = Number.isInteger(target)
+    ? 0
+    : (target.toString().split('.')[1]?.length ?? 0);
+
+  return value.toLocaleString('en-US', {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals,
+  });
 }
 
 function StatItem({
@@ -31,6 +52,7 @@ function StatItem({
   active: boolean;
 }) {
   const count = useCountUp(stat.value, active);
+  const formattedCount = formatCount(count, stat.value);
   const isLast = index === stats.length - 1;
 
   return (
@@ -51,7 +73,7 @@ function StatItem({
       {/* Number */}
       <div
         style={{
-          fontFamily: "'Space Grotesk', sans-serif",
+          fontFamily: "'Sora', sans-serif",
           fontWeight: 700,
           fontSize: 'clamp(2.4rem, 4vw, 3.2rem)',
           lineHeight: 1,
@@ -63,7 +85,7 @@ function StatItem({
         }}
       >
         <span style={{ fontSize: '60%', color: 'hsl(var(--primary))', fontWeight: 600 }}>{stat.prefix}</span>
-        {count}
+        <span style={{ fontVariantNumeric: 'tabular-nums' }}>{formattedCount}</span>
         {stat.suffix && (
           <span style={{ fontSize: '65%', color: 'hsl(var(--primary))', fontWeight: 700 }}>{stat.suffix}</span>
         )}
@@ -72,7 +94,7 @@ function StatItem({
       {/* Label */}
       <div
         style={{
-          fontFamily: "'Space Grotesk', sans-serif",
+          fontFamily: "'Sora', sans-serif",
           fontWeight: 600,
           fontSize: '0.95rem',
           color: 'hsl(var(--foreground))',
@@ -84,7 +106,7 @@ function StatItem({
       {/* Sublabel */}
       <div
         style={{
-          fontFamily: "'Inter', sans-serif",
+          fontFamily: "'Manrope', sans-serif",
           fontWeight: 400,
           fontSize: '0.75rem',
           color: 'hsl(var(--muted-foreground))',
@@ -97,9 +119,10 @@ function StatItem({
   );
 }
 
-export function AboutStats() {
+export function AboutStats({ introDone }: { introDone: boolean }) {
   const ref = useRef<HTMLElement>(null);
-  const active = useInView(ref, { once: true, margin: '-60px' });
+  const inView = useInView(ref, { once: true, margin: '-60px' });
+  const active = inView && introDone;
 
   return (
     <section
@@ -126,3 +149,4 @@ export function AboutStats() {
     </section>
   );
 }
+

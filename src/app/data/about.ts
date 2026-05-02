@@ -6,7 +6,7 @@
 export const hero = {
   eyebrow: 'About ARGO Fly B2B',
   headline: 'Leading the Future of Travel\n#1 Aviation Booking Engine in the Middle East.',
-  body: 'We connect airlines, low-cost carriers and booking companies through enterprise-grade distribution infrastructure — built for scale, trusted for reliability.',
+  body: '',
   imageAlt: 'Commercial aircraft against blue sky',
 };
 
@@ -60,7 +60,7 @@ export const stats: Stat[] = [
   { prefix: '+', value: 400,  suffix: '',  label: 'Airlines',            sublabel: 'Full-service & hybrid carriers' },
   { prefix: '+', value: 150,  suffix: '',  label: 'Low-Cost Carriers',   sublabel: 'LCC & ULCC partners worldwide'  },
   { prefix: '+', value: 500,  suffix: '',  label: 'Booking Companies',   sublabel: 'Travel agencies & OTAs'         },
-  { prefix: '+', value: 500,  suffix: 'K', label: 'Daily Bookings',      sublabel: 'Passenger transactions per day' },
+  { prefix: '+', value: 75.3, suffix: '',  label: 'Daily Bookings',      sublabel: 'Passenger transactions per day' },
 ];
 
 export type Airline = {
@@ -168,7 +168,7 @@ export const footer: FooterContent = {
     },
     {
       heading: 'HOTLINE',
-      lines: ['For More Information Please Contact:', '+964 776 094 8500'],
+      lines: ['For More Information Please Contact:', '+971 52 901 5091'],
     },
   ],
   bottomBarLeft: '2026 Argo fly All rights reserved',
@@ -268,3 +268,4 @@ export const featuresSection: FeaturesSection = {
     },
   ],
 };
+

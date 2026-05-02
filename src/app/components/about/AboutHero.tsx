@@ -1,9 +1,8 @@
 import { motion } from 'motion/react';
-import { ImageWithFallback } from '../figma/ImageWithFallback';
 import { hero } from '../../data/about';
-import heroPlaneImage from '../../../assets/hero-plane.jpg';
+import heroVideo from '../../../assets/0_Airplane_Aircraft_1920x1080.mp4';
 
-const HERO_IMAGE = heroPlaneImage;
+const HERO_VIDEO = heroVideo;
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -23,10 +22,11 @@ const HERO_CSS = `
   }
 `;
 
-export function AboutHero() {
+export function AboutHero({ introDone }: { introDone: boolean }) {
   const [headlinePrimary, ...headlineSecondaryParts] = hero.headline.split('\n');
   const headlineSecondary = headlineSecondaryParts.join('\n').trim();
   const secondarySplit = headlineSecondary.split('#1');
+  const hasBody = hero.body.trim().length > 0;
 
   return (
     <section style={{ position: 'relative', backgroundColor: 'transparent', overflow: 'hidden' }}>
@@ -34,9 +34,22 @@ export function AboutHero() {
 
       <div className="argo-about-hero">
         <div className="argo-about-hero-bg" aria-hidden="true">
-          <ImageWithFallback
-            src={HERO_IMAGE}
-            alt={hero.imageAlt}
+          <motion.video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            initial={{ scale: 1.08, opacity: 0 }}
+            animate={
+              introDone
+                ? {
+                    scale: [1.11, 1.03, 1],
+                    opacity: [0, 0.62, 1],
+                    transition: { duration: 1.6, ease },
+                  }
+                : {}
+            }
             style={{
               position: 'absolute',
               inset: 0,
@@ -45,50 +58,75 @@ export function AboutHero() {
               objectFit: 'cover',
               objectPosition: '68% 45%',
             }}
-          />
-          <div
+          >
+            <source src={HERO_VIDEO} type="video/mp4" />
+          </motion.video>
+          <motion.div
+            initial={{ opacity: 1 }}
+            animate={
+              introDone
+                ? {
+                    opacity: [1, 0.92, 1],
+                    transition: { duration: 1.35, ease },
+                  }
+                : {}
+            }
             style={{
               position: 'absolute',
               inset: 0,
               background:
-                'linear-gradient(90deg, rgba(218,231,244,0.90) 0%, rgba(218,231,244,0.76) 26%, rgba(218,231,244,0.44) 48%, rgba(218,231,244,0.12) 70%, transparent 100%), linear-gradient(180deg, rgba(4,116,196,0.10) 0%, rgba(4,116,196,0.03) 40%, rgba(4,116,196,0.00) 100%)',
+                'linear-gradient(96deg, rgba(244,248,253,0.92) 0%, rgba(241,247,253,0.78) 28%, rgba(234,242,250,0.50) 50%, rgba(225,236,248,0.21) 72%, rgba(220,232,246,0.08) 100%), linear-gradient(180deg, rgba(12,52,92,0.28) 0%, rgba(12,52,92,0.12) 42%, rgba(12,52,92,0.04) 100%)',
+            }}
+          />
+          <motion.div
+            aria-hidden="true"
+            initial={{ opacity: 0, x: '-22%' }}
+            animate={
+              introDone
+                ? {
+                    opacity: [0, 0.52, 0],
+                    x: ['-22%', '70%', '126%'],
+                    transition: { duration: 1.35, ease, delay: 0.2 },
+                  }
+                : {}
+            }
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(100deg, transparent 32%, rgba(255,255,255,0.46) 50%, transparent 68%)',
+              mixBlendMode: 'screen',
             }}
           />
         </div>
 
         <div className="argo-about-hero-text">
           <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease }}
-            style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: '1.6rem' }}
-          >
-            <span style={{ display: 'block', width: 28, height: 2, backgroundColor: 'hsl(var(--primary))', borderRadius: 2, flexShrink: 0 }} />
-            <span
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontWeight: 700,
-                fontSize: '0.9rem',
-                letterSpacing: '0.24em',
-                textTransform: 'uppercase',
-                color: 'hsl(var(--primary))',
-              }}
-            >
-              {hero.eyebrow}
-            </span>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.08, ease }}
+            aria-hidden="true"
+            initial={{ opacity: 0, y: 24 }}
+            animate={introDone ? { opacity: [0, 0.4, 0], y: 0 } : {}}
+            transition={{ duration: 1.2, delay: 0.25, ease }}
             style={{
-              fontFamily: "'Space Grotesk', sans-serif",
+              position: 'absolute',
+              inset: '-14% -18% -8% -10%',
+              zIndex: -1,
+              pointerEvents: 'none',
+              background:
+                'radial-gradient(circle at 20% 40%, rgba(255,255,255,0.56), rgba(255,255,255,0.16) 34%, transparent 58%)',
+              filter: 'blur(10px)',
+            }}
+          />
+          <motion.h1
+            initial={{ opacity: 0, y: 26, scale: 0.985 }}
+            animate={introDone ? { opacity: 1, y: 0, scale: 1 } : {}}
+            transition={{ duration: 0.95, delay: 0.26, ease }}
+            style={{
+              fontFamily: "'Sora', sans-serif",
               fontWeight: 700,
               fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)',
               lineHeight: 1.1,
               letterSpacing: '-0.025em',
               color: 'hsl(var(--foreground))',
+              textShadow: '0 2px 14px rgba(255,255,255,0.25)',
               margin: 0,
             }}
           >
@@ -103,7 +141,7 @@ export function AboutHero() {
                     fontSize: 'clamp(1.1rem, 2.3vw, 2.05rem)',
                     lineHeight: 1.2,
                     letterSpacing: '-0.01em',
-                    color: 'hsl(var(--muted-foreground))',
+                    color: 'hsl(214 40% 30%)',
                   }}
                 >
                   {secondarySplit.length > 1 ? (
@@ -122,34 +160,31 @@ export function AboutHero() {
             )}
           </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.18, ease }}
-            style={{
-              fontFamily: "'Inter', sans-serif",
-              fontWeight: 400,
-              fontSize: 'clamp(0.9rem, 1.5vw, 1.05rem)',
-              lineHeight: 1.75,
-              color: 'hsl(var(--muted-foreground))',
-              marginTop: '1.4rem',
-              maxWidth: 480,
-            }}
-          >
-            {hero.body}
-          </motion.p>
+          {hasBody ? (
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={introDone ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.88, delay: 0.46, ease }}
+              style={{
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 400,
+                fontSize: 'clamp(0.9rem, 1.5vw, 1.05rem)',
+                lineHeight: 1.75,
+                color: 'hsl(214 36% 31%)',
+                marginTop: '1.4rem',
+                maxWidth: 480,
+              }}
+            >
+              {hero.body}
+            </motion.p>
+          ) : null}
 
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.9, delay: 0.32, ease }}
             style={{
-              marginTop: '2.8rem',
-              width: 56,
-              height: 3,
-              backgroundColor: 'hsl(var(--primary))',
-              transformOrigin: 'left center',
-              borderRadius: 2,
+              display: 'none',
             }}
           />
         </div>
@@ -157,3 +192,4 @@ export function AboutHero() {
     </section>
   );
 }
+
