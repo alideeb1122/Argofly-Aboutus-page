@@ -76,31 +76,36 @@ export function AboutFeatures() {
     <section
       ref={ref}
       className={cn(
-        'w-full px-3 py-8 sm:px-5 sm:py-12 lg:px-6 lg:py-14',
+        'w-full py-8 sm:py-12 lg:py-14',
         'transition-all duration-700 ease-out',
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4',
         prefersReducedMotion && 'opacity-100 translate-y-0',
       )}
     >
       <style dangerouslySetInnerHTML={{ __html: RADAR_CSS }} />
-      <div className="mx-auto w-full max-w-[1360px]">
+      <div className="mx-auto w-full max-w-[1280px] px-[clamp(1.5rem,4vw,3rem)]">
         <div className="grid grid-cols-1 gap-0 overflow-hidden rounded-3xl bg-[hsl(var(--surface-dark))] text-[hsl(var(--surface-dark-foreground))] shadow-[0_24px_80px_rgba(15,23,42,0.55)] lg:grid-cols-12">
           {/* Left panel */}
           <div className="relative flex flex-col gap-5 overflow-hidden px-5 py-8 sm:px-7 lg:col-span-5 lg:min-h-[640px] lg:py-10">
-            <img
-              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80"
-              alt=""
+            <div
               aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover opacity-[0.55]"
-              style={{ objectPosition: 'center center' }}
+              className="absolute inset-0"
+              style={{
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center center',
+                opacity: 0.9,
+                transform: 'scale(1.02)',
+              }}
             />
-            <div aria-hidden="true" className="absolute inset-0 bg-[#0474c4]/30" />
+            <div aria-hidden="true" className="absolute inset-0 bg-[#0474c4]/20" />
             <div
               aria-hidden="true"
               className="absolute inset-0"
               style={{
                 background:
-                  'linear-gradient(180deg, rgba(4,116,196,0.93) 0%, rgba(36,126,201,0.86) 48%, rgba(191,221,244,0.80) 100%)',
+                  'linear-gradient(180deg, rgba(4,116,196,0.58) 0%, rgba(36,126,201,0.42) 46%, rgba(191,221,244,0.24) 100%)',
               }}
             />
             <div
@@ -116,7 +121,11 @@ export function AboutFeatures() {
               }}
             />
             <div className="relative z-10 flex flex-col gap-5">
-              <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-sm">
+              <div className="group relative overflow-hidden rounded-2xl border border-white/20 bg-white/12 p-5 backdrop-blur-sm transition-all duration-500 ease-out hover:-translate-y-0.5 hover:bg-white/16 hover:shadow-[0_20px_48px_rgba(5,56,103,0.30)]">
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 -translate-x-[140%] bg-[linear-gradient(105deg,transparent_22%,rgba(255,255,255,0.42)_48%,transparent_74%)] opacity-0 transition-all duration-700 ease-out group-hover:translate-x-[140%] group-hover:opacity-100"
+                />
                 {data.label && (
                   <p className="inline-flex w-fit items-center rounded-full border border-white/55 bg-white/90 px-4 py-1.5 text-[0.78rem] font-bold uppercase tracking-[0.18em] text-[hsl(var(--primary))] shadow-[0_6px_18px_rgba(4,116,196,0.14)]">
                     {data.label}

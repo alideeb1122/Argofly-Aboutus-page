@@ -58,35 +58,44 @@ export function AboutFooter() {
           pointerEvents: 'none',
         }}
       />
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-14">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-4">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 py-11">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4">
           {data.columns.map((column, i) => (
-            <div
-              key={column.heading}
-              className={i === 0 ? '' : 'xl:border-l xl:border-white/14 xl:pl-8'}
-            >
-              <h3 className="text-[#eaf4ff] font-semibold tracking-[0.14em] uppercase text-[1.02rem] mb-3 drop-shadow-[0_2px_4px_rgba(0,0,0,0.22)]">
-                {column.heading}
-              </h3>
-              <ul className="list-none p-0 m-0 space-y-1.5 max-w-[17rem]">
-                {column.lines.map((line, index) => (
-                  <li
-                    key={index}
-                    className={
-                      line.startsWith('+')
-                        ? 'font-semibold text-white text-[1.15rem] leading-8 tracking-[0.01em] drop-shadow-[0_2px_5px_rgba(0,0,0,0.24)]'
-                        : 'text-[rgba(248,252,255,0.98)] text-[1rem] leading-7 drop-shadow-[0_2px_4px_rgba(0,0,0,0.2)]'
-                    }
+            (() => {
+              const phoneLine = column.lines.find((line) => line.startsWith('+')) ?? '';
+              const infoLines = column.lines.filter((line) => !line.startsWith('+'));
+
+              return (
+                <div
+                  key={column.heading}
+                  className={i === 0 ? 'flex flex-col' : 'flex flex-col xl:border-l xl:border-white/16 xl:pl-8'}
+                >
+                  <h3 className="text-[#eef6ff] font-semibold tracking-[0.11em] uppercase text-[1.02rem] mb-2.5 drop-shadow-[0_2px_5px_rgba(0,0,0,0.30)]">
+                    {column.heading}
+                  </h3>
+                  <ul className="list-none p-0 m-0 space-y-1 max-w-[20rem] min-h-[4.4rem]">
+                    {infoLines.map((line, index) => (
+                      <li
+                        key={index}
+                        className="text-[rgba(248,252,255,0.99)] text-[1rem] leading-7 drop-shadow-[0_2px_5px_rgba(0,0,0,0.28)]"
+                      >
+                        {line}
+                      </li>
+                    ))}
+                  </ul>
+                  <p
+                    className="mt-3 font-semibold text-white text-[1.18rem] md:text-[1.22rem] leading-8 tracking-[0.01em] drop-shadow-[0_2px_6px_rgba(0,0,0,0.34)] whitespace-nowrap"
+                    style={{ fontVariantNumeric: 'tabular-nums' }}
                   >
-                    {line}
-                  </li>
-                ))}
-              </ul>
-            </div>
+                    {phoneLine}
+                  </p>
+                </div>
+              );
+            })()
           ))}
         </div>
 
-        <div className="mt-12 border-t border-white/20 pt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-[rgba(245,250,255,0.98)] text-sm">
+        <div className="mt-9 border-t border-white/20 pt-5 flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-[rgba(245,250,255,0.98)] text-sm">
           <span className="drop-shadow-[0_1px_2px_rgba(0,0,0,0.16)]">{data.bottomBarLeft}</span>
           <span className="inline-flex items-center gap-2 font-semibold drop-shadow-[0_1px_2px_rgba(0,0,0,0.18)]">
             <span>{data.bottomBarRight}</span>

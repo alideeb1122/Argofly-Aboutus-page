@@ -106,7 +106,7 @@ function DesktopMilestone({
             />
             <div
               style={{
-                fontFamily: "'Space Grotesk', sans-serif",
+                fontFamily: "'Sora', sans-serif",
                 fontWeight: 600,
                 fontSize: '1rem',
                 color: 'hsl(var(--foreground))',
@@ -119,7 +119,7 @@ function DesktopMilestone({
             </div>
             <p
               style={{
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Manrope', sans-serif",
                 fontWeight: 400,
                 fontSize: '0.85rem',
                 lineHeight: 1.7,
@@ -164,7 +164,7 @@ function DesktopMilestone({
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.12 }}
           style={{
-            fontFamily: "'Space Grotesk', sans-serif",
+            fontFamily: "'Sora', sans-serif",
             fontWeight: 700,
             fontSize: '0.68rem',
             letterSpacing: '0.1em',
@@ -234,7 +234,7 @@ function DesktopMilestone({
             />
             <div
               style={{
-                fontFamily: "'Space Grotesk', sans-serif",
+                fontFamily: "'Sora', sans-serif",
                 fontWeight: 600,
                 fontSize: '1rem',
                 color: 'hsl(var(--foreground))',
@@ -247,7 +247,7 @@ function DesktopMilestone({
             </div>
             <p
               style={{
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Manrope', sans-serif",
                 fontWeight: 400,
                 fontSize: '0.85rem',
                 lineHeight: 1.7,
@@ -331,7 +331,7 @@ function MobileMilestone({ m, index }: { m: (typeof timeline)[0]; index: number 
       <div style={{ minWidth: 0, flex: 1 }}>
         <div
           style={{
-            fontFamily: "'Space Grotesk', sans-serif",
+            fontFamily: "'Sora', sans-serif",
             fontWeight: 700,
             fontSize: '0.68rem',
             letterSpacing: '0.12em',
@@ -345,7 +345,7 @@ function MobileMilestone({ m, index }: { m: (typeof timeline)[0]; index: number 
         </div>
         <div
           style={{
-            fontFamily: "'Space Grotesk', sans-serif",
+            fontFamily: "'Sora', sans-serif",
             fontWeight: 600,
             fontSize: '0.95rem',
             color: 'hsl(var(--foreground))',
@@ -358,7 +358,7 @@ function MobileMilestone({ m, index }: { m: (typeof timeline)[0]; index: number 
         </div>
         <p
           style={{
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "'Manrope', sans-serif",
             fontWeight: 400,
             fontSize: '0.85rem',
             lineHeight: 1.7,
@@ -429,7 +429,7 @@ export function AboutTimeline() {
             <span style={{ width: 20, height: 1.5, backgroundColor: 'hsl(var(--border))', display: 'block' }} />
             <span
               style={{
-                fontFamily: "'Space Grotesk', sans-serif",
+                fontFamily: "'Sora', sans-serif",
                 fontWeight: 500,
                 fontSize: '0.65rem',
                 letterSpacing: '0.26em',
@@ -447,7 +447,7 @@ export function AboutTimeline() {
             animate={headInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.06, ease }}
             style={{
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "'Sora', sans-serif",
               fontWeight: 700,
               fontSize: 'clamp(1.8rem, 3vw, 2.6rem)',
               lineHeight: 1.15,
@@ -558,7 +558,7 @@ export function AboutTimeline() {
         >
           <p
             style={{
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "'Sora', sans-serif",
               fontWeight: 600,
               fontSize: 'clamp(1rem, 1.6vw, 1.15rem)',
               letterSpacing: '-0.01em',

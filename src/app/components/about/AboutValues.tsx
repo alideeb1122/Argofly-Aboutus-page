@@ -318,7 +318,7 @@ function ValueCard({ card, index }: { card: (typeof values)[0]; index: number })
         {/* Eyebrow */}
         <div
           style={{
-            fontFamily: "'Space Grotesk', sans-serif",
+            fontFamily: "'Sora', sans-serif",
             fontWeight: 600,
             fontSize: '0.84rem',
             letterSpacing: '0.24em',
@@ -334,7 +334,7 @@ function ValueCard({ card, index }: { card: (typeof values)[0]; index: number })
         {/* Headline */}
         <h3
           style={{
-            fontFamily: "'Space Grotesk', sans-serif",
+            fontFamily: "'Sora', sans-serif",
             fontWeight: 600,
             fontSize: 'clamp(1.08rem, 1.8vw, 1.22rem)',
             lineHeight: 1.32,
@@ -361,7 +361,7 @@ function ValueCard({ card, index }: { card: (typeof values)[0]; index: number })
         {/* Body */}
         <p
           style={{
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "'Manrope', sans-serif",
             fontWeight: 400,
             fontSize: '0.9rem',
             lineHeight: 1.75,
@@ -401,7 +401,7 @@ export function AboutValues() {
             <span style={{ width: 20, height: 1.5, backgroundColor: 'hsl(var(--border))', display: 'block' }} />
             <span
               style={{
-                fontFamily: "'Space Grotesk', sans-serif",
+                fontFamily: "'Sora', sans-serif",
                 fontWeight: 500,
                 fontSize: '0.65rem',
                 letterSpacing: '0.26em',
@@ -419,7 +419,7 @@ export function AboutValues() {
             animate={headInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.06, ease }}
             style={{
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "'Sora', sans-serif",
               fontWeight: 700,
               fontSize: 'clamp(1.8rem, 3vw, 2.6rem)',
               lineHeight: 1.15,

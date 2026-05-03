@@ -131,7 +131,7 @@ function DefaultMark({ code }: { code: string }) {
         x="14"
         y="18"
         textAnchor="middle"
-        fontFamily="'Space Grotesk', sans-serif"
+        fontFamily="'Sora', sans-serif"
         fontWeight="700"
         fontSize="9"
         fill="currentColor"
@@ -278,7 +278,7 @@ export function AboutMarquee() {
         >
           <p
             style={{
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "'Sora', sans-serif",
               fontWeight: 500,
               fontSize: '0.65rem',
               letterSpacing: '0.26em',
@@ -291,7 +291,7 @@ export function AboutMarquee() {
           </p>
           <h2
             style={{
-              fontFamily: "'Space Grotesk', sans-serif",
+              fontFamily: "'Sora', sans-serif",
               fontWeight: 700,
               fontSize: 'clamp(1.6rem,2.8vw,2.2rem)',
               letterSpacing: '-0.02em',

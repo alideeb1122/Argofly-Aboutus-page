@@ -139,6 +139,15 @@
   .argo-about-page {
     @apply bg-background text-foreground;
     font-size: var(--font-size);
+    font-family: 'Manrope', sans-serif;
+  }
+
+  .argo-about-page .font-display,
+  .argo-about-page h1,
+  .argo-about-page h2,
+  .argo-about-page h3,
+  .argo-about-page h4 {
+    font-family: 'Sora', sans-serif;
   }
 
   /**

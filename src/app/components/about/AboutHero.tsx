@@ -1,8 +1,10 @@
+import { useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import { hero } from '../../data/about';
 import heroVideo from '../../../assets/0_Airplane_Aircraft_1920x1080.mp4';
 
 const HERO_VIDEO = heroVideo;
+const HERO_VIDEO_RECOVERY_MS = 2500;
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -27,6 +29,63 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
   const headlineSecondary = headlineSecondaryParts.join('\n').trim();
   const secondarySplit = headlineSecondary.split('#1');
   const hasBody = hero.body.trim().length > 0;
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    let stallTimer = 0;
+
+    const clearStallTimer = () => {
+      if (!stallTimer) return;
+      window.clearTimeout(stallTimer);
+      stallTimer = 0;
+    };
+
+    const recoverPlayback = () => {
+      const currentVideo = videoRef.current;
+      if (!currentVideo) return;
+
+      if (currentVideo.readyState < 3) {
+        currentVideo.load();
+      }
+
+      currentVideo.play().catch(() => {
+        // Keep retrying on constrained/free hosts; no fallback replacement.
+      });
+    };
+
+    const scheduleRecovery = () => {
+      clearStallTimer();
+      stallTimer = window.setTimeout(recoverPlayback, HERO_VIDEO_RECOVERY_MS);
+    };
+
+    const handleError = () => {
+      scheduleRecovery();
+    };
+
+    const handleHealthyPlayback = () => {
+      clearStallTimer();
+    };
+
+    video.addEventListener('waiting', scheduleRecovery);
+    video.addEventListener('stalled', scheduleRecovery);
+    video.addEventListener('suspend', scheduleRecovery);
+    video.addEventListener('canplay', handleHealthyPlayback);
+    video.addEventListener('playing', handleHealthyPlayback);
+    video.addEventListener('error', handleError);
+
+    return () => {
+      clearStallTimer();
+      video.removeEventListener('waiting', scheduleRecovery);
+      video.removeEventListener('stalled', scheduleRecovery);
+      video.removeEventListener('suspend', scheduleRecovery);
+      video.removeEventListener('canplay', handleHealthyPlayback);
+      video.removeEventListener('playing', handleHealthyPlayback);
+      video.removeEventListener('error', handleError);
+    };
+  }, []);
 
   return (
     <section style={{ position: 'relative', backgroundColor: 'transparent', overflow: 'hidden' }}>
@@ -35,11 +94,12 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
       <div className="argo-about-hero">
         <div className="argo-about-hero-bg" aria-hidden="true">
           <motion.video
+            ref={videoRef}
             autoPlay
             loop
             muted
             playsInline
-            preload="auto"
+            preload="metadata"
             initial={{ scale: 1.08, opacity: 0 }}
             animate={
               introDone
@@ -192,4 +252,3 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
     </section>
   );
 }
-
