@@ -35,6 +35,9 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
     const video = videoRef.current;
     if (!video) return;
 
+    video.muted = true;
+    video.defaultMuted = true;
+
     let stallTimer = 0;
 
     const clearStallTimer = () => {
@@ -56,6 +59,14 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
       });
     };
 
+    const ensurePlayback = () => {
+      const currentVideo = videoRef.current;
+      if (!currentVideo) return;
+      currentVideo.play().catch(() => {
+        // Autoplay can be delayed by browser policies; retry through existing recovery hooks.
+      });
+    };
+
     const scheduleRecovery = () => {
       clearStallTimer();
       stallTimer = window.setTimeout(recoverPlayback, HERO_VIDEO_RECOVERY_MS);
@@ -69,12 +80,23 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
       clearStallTimer();
     };
 
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        ensurePlayback();
+      }
+    };
+
     video.addEventListener('waiting', scheduleRecovery);
     video.addEventListener('stalled', scheduleRecovery);
     video.addEventListener('suspend', scheduleRecovery);
     video.addEventListener('canplay', handleHealthyPlayback);
+    video.addEventListener('loadedmetadata', ensurePlayback);
+    video.addEventListener('loadeddata', ensurePlayback);
     video.addEventListener('playing', handleHealthyPlayback);
     video.addEventListener('error', handleError);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    ensurePlayback();
 
     return () => {
       clearStallTimer();
@@ -82,8 +104,11 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
       video.removeEventListener('stalled', scheduleRecovery);
       video.removeEventListener('suspend', scheduleRecovery);
       video.removeEventListener('canplay', handleHealthyPlayback);
+      video.removeEventListener('loadedmetadata', ensurePlayback);
+      video.removeEventListener('loadeddata', ensurePlayback);
       video.removeEventListener('playing', handleHealthyPlayback);
       video.removeEventListener('error', handleError);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, []);
 
@@ -98,8 +123,9 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
             autoPlay
             loop
             muted
+            defaultMuted
             playsInline
-            preload="metadata"
+            preload="auto"
             initial={{ scale: 1.08, opacity: 0 }}
             animate={
               introDone
