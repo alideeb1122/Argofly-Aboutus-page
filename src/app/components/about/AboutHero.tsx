@@ -126,7 +126,7 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
             defaultMuted
             playsInline
             preload="auto"
-            initial={{ scale: 1.08, opacity: 0 }}
+            initial={{ scale: 1, opacity: 1 }}
             animate={
               introDone
                 ? {
@@ -134,7 +134,7 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                     opacity: [0, 0.62, 1],
                     transition: { duration: 1.6, ease },
                   }
-                : {}
+                : { scale: 1, opacity: 1 }
             }
             style={{
               position: 'absolute',
