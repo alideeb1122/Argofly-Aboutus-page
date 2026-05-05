@@ -5,8 +5,8 @@
 
 export const hero = {
   eyebrow: 'About ARGO Fly B2B',
-  headline: 'Leading the Future of Travel\n#1 Aviation Booking Engine in the Middle East.',
-  body: '',
+  headline: 'Powerful Pricing\nConfidence in Execution.',
+  body: 'A vision designed for your needs; more than just a booking tool, we are your strategic partner in delivering competitive rates and operational efficiency to keep your agency ahead of the curve.',
   imageAlt: 'Commercial aircraft against blue sky',
 };
 
