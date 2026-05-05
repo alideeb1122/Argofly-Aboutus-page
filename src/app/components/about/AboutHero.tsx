@@ -260,7 +260,7 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
             style={{
               fontFamily: "'Sora', sans-serif",
               fontWeight: 700,
-              fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)',
+              fontSize: 'clamp(1.95rem, 3.9vw, 3.2rem)',
               lineHeight: 1.1,
               letterSpacing: '-0.025em',
               color: 'hsl(var(--foreground))',
@@ -283,7 +283,7 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                   style={{
                     display: 'block',
                     fontWeight: 700,
-                    fontSize: 'clamp(2.02rem, 4.1vw, 3.45rem)',
+                    fontSize: 'clamp(1.8rem, 3.5vw, 2.95rem)',
                     lineHeight: 1.1,
                     letterSpacing: '-0.025em',
                   }}
@@ -304,7 +304,7 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                     display: 'block',
                     marginTop: '0.45rem',
                     fontWeight: 700,
-                    fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)',
+                    fontSize: 'clamp(1.95rem, 3.9vw, 3.2rem)',
                     lineHeight: 1.1,
                     letterSpacing: '-0.025em',
                     color: 'hsl(var(--foreground))',

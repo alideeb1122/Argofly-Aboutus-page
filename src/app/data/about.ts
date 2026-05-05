@@ -59,8 +59,8 @@ export type Stat = {
 export const stats: Stat[] = [
   { prefix: '+', value: 400,  suffix: '',  label: 'Airlines',            sublabel: 'Full-service & hybrid carriers' },
   { prefix: '+', value: 150,  suffix: '',  label: 'Low-Cost Carriers',   sublabel: 'LCC & ULCC partners worldwide'  },
-  { prefix: '+', value: 500,  suffix: '',  label: 'Booking Companies',   sublabel: 'Travel agencies & OTAs'         },
-  { prefix: '+', value: 75.3, suffix: '',  label: 'Daily Bookings',      sublabel: 'Passenger transactions per day' },
+  { prefix: '+', value: 1600, suffix: '',  label: 'Offices',             sublabel: 'Travel agencies & OTAs'         },
+  { prefix: '+', value: 2100, suffix: '',  label: 'Daily Bookings',      sublabel: 'Passenger transactions per day' },
 ];
 
 export type Airline = {
