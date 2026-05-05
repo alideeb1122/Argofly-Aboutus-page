@@ -21,11 +21,12 @@ const HERO_CSS = `
   .argo-script-word {
     display: inline-block;
     color: hsl(var(--primary));
-    font-family: 'Caveat', cursive;
+    font-family: 'Sora', sans-serif;
     font-weight: 700;
-    letter-spacing: 0.01em;
-    text-shadow: 0 8px 22px rgba(24,111,214,0.22);
+    letter-spacing: -0.01em;
+    text-shadow: 0 6px 16px rgba(24,111,214,0.16);
     vertical-align: baseline;
+    position: relative;
   }
   .argo-script-word__ink {
     display: inline-block;
@@ -33,14 +34,32 @@ const HERO_CSS = `
     white-space: nowrap;
     vertical-align: baseline;
     max-width: 0;
-    animation: argoWriteIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.72s forwards;
+    animation: argoWriteIn 0.72s cubic-bezier(0.22, 1, 0.36, 1) 0.64s forwards;
+  }
+  .argo-script-word::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.08em;
+    height: 0.08em;
+    border-radius: 999px;
+    background: linear-gradient(90deg, hsl(var(--primary)) 0%, rgba(24,111,214,0.35) 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: argoUnderlineIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards;
   }
   @keyframes argoWriteIn {
     from { max-width: 0; opacity: 0.55; }
-    to { max-width: 14ch; opacity: 1; }
+    to { max-width: 11ch; opacity: 1; }
+  }
+  @keyframes argoUnderlineIn {
+    from { transform: scaleX(0); opacity: 0; }
+    to { transform: scaleX(1); opacity: 1; }
   }
   @media (prefers-reduced-motion: reduce) {
     .argo-script-word__ink { animation: none; max-width: 14ch; opacity: 1; }
+    .argo-script-word::after { animation: none; transform: scaleX(1); opacity: 1; }
   }
   @media (max-width: 767px) {
     .argo-about-hero { min-height: 560px; }
