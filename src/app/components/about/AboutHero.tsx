@@ -286,11 +286,11 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                   style={{
                     display: 'block',
                     marginTop: '0.45rem',
-                    fontWeight: 400,
-                    fontSize: 'clamp(1.1rem, 2.3vw, 2.05rem)',
-                    lineHeight: 1.2,
-                    letterSpacing: '-0.01em',
-                    color: 'hsl(214 40% 30%)',
+                    fontWeight: 700,
+                    fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)',
+                    lineHeight: 1.1,
+                    letterSpacing: '-0.025em',
+                    color: 'hsl(var(--foreground))',
                   }}
                 >
                   {secondarySplit.length > 1 ? (
