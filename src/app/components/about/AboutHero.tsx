@@ -49,6 +49,28 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
       </>
     );
   };
+  const renderSecondaryLine = (line: string) => {
+    const target = 'Execution';
+    const index = line.indexOf(target);
+    if (index === -1) return line;
+    const before = line.slice(0, index);
+    const after = line.slice(index + target.length);
+    return (
+      <>
+        {before}
+        <span
+          style={{
+            color: 'hsl(var(--primary))',
+            fontWeight: 700,
+            letterSpacing: '-0.01em',
+          }}
+        >
+          {target}
+        </span>
+        {after}
+      </>
+    );
+  };
 
   useEffect(() => {
     const video = videoRef.current;
@@ -278,7 +300,7 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                       {secondarySplit.slice(1).join('#1')}
                     </>
                   ) : (
-                    renderEmphasizedLine(headlineSecondary, false)
+                    renderSecondaryLine(headlineSecondary)
                   )}
                 </motion.span>
               </>
