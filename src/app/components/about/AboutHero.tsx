@@ -183,7 +183,7 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
               width: '100%',
               height: '100%',
               objectFit: 'cover',
-              objectPosition: '68% 45%',
+              objectPosition: '82% 45%',
             }}
           >
             <source src={HERO_VIDEO} type="video/mp4" />
