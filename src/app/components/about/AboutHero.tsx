@@ -213,7 +213,7 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
               position: 'absolute',
               inset: 0,
               background:
-                'linear-gradient(96deg, rgba(244,248,253,0.96) 0%, rgba(241,247,253,0.86) 34%, rgba(234,242,250,0.58) 52%, rgba(225,236,248,0.24) 74%, rgba(220,232,246,0.10) 100%), linear-gradient(180deg, rgba(12,52,92,0.28) 0%, rgba(12,52,92,0.12) 42%, rgba(12,52,92,0.04) 100%)',
+                'linear-gradient(96deg, rgba(242,247,253,0.78) 0%, rgba(238,245,252,0.60) 34%, rgba(228,239,250,0.34) 52%, rgba(216,231,246,0.14) 74%, rgba(210,226,243,0.06) 100%), linear-gradient(180deg, rgba(10,45,85,0.22) 0%, rgba(10,45,85,0.10) 42%, rgba(10,45,85,0.03) 100%)',
             }}
           />
           <motion.div
@@ -231,7 +231,7 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
             style={{
               position: 'absolute',
               inset: 0,
-              background: 'linear-gradient(100deg, transparent 32%, rgba(255,255,255,0.46) 50%, transparent 68%)',
+              background: 'linear-gradient(100deg, transparent 34%, rgba(255,255,255,0.26) 50%, transparent 66%)',
               mixBlendMode: 'screen',
             }}
           />
@@ -264,7 +264,7 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
               lineHeight: 1.1,
               letterSpacing: '-0.025em',
               color: 'hsl(var(--foreground))',
-              textShadow: '0 2px 14px rgba(255,255,255,0.25)',
+              textShadow: '0 2px 10px rgba(255,255,255,0.12)',
               margin: 0,
             }}
           >
@@ -330,7 +330,7 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                 fontWeight: 400,
                 fontSize: 'clamp(0.9rem, 1.5vw, 1.05rem)',
                 lineHeight: 1.75,
-                color: 'hsl(214 36% 31%)',
+                color: 'hsl(214 42% 27%)',
                 marginTop: '1.4rem',
                 maxWidth: 480,
               }}
