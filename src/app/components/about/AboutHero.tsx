@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { motion } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react';
 import { hero } from '../../data/about';
 import heroVideo from '../../../assets/0_Airplane_Aircraft_1920x1080.mp4';
 
@@ -30,6 +30,25 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
   const secondarySplit = headlineSecondary.split('#1');
   const hasBody = hero.body.trim().length > 0;
   const videoRef = useRef<HTMLVideoElement>(null);
+  const reduceMotion = useReducedMotion();
+  const renderEmphasizedLine = (line: string, emphasize: boolean) => {
+    if (!line.trim()) return null;
+    if (!emphasize) return line;
+    const [firstWord, ...rest] = line.trim().split(' ');
+    return (
+      <>
+        <span
+          style={{
+            color: 'hsl(var(--primary))',
+            textShadow: '0 8px 22px rgba(24,111,214,0.22)',
+          }}
+        >
+          {firstWord}
+        </span>
+        {rest.length ? ` ${rest.join(' ')}` : ''}
+      </>
+    );
+  };
 
   useEffect(() => {
     const video = videoRef.current;
@@ -218,8 +237,30 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
           >
             {headlineSecondary ? (
               <>
-                <span style={{ display: 'block', fontWeight: 700 }}>{headlinePrimary}</span>
-                <span
+                <motion.span
+                  initial={reduceMotion ? undefined : { opacity: 0, y: 14 }}
+                  animate={
+                    introDone
+                      ? reduceMotion
+                        ? { opacity: 1 }
+                        : { opacity: 1, y: 0 }
+                      : {}
+                  }
+                  transition={{ duration: 0.72, delay: 0.3, ease }}
+                  style={{ display: 'block', fontWeight: 700 }}
+                >
+                  {renderEmphasizedLine(headlinePrimary, true)}
+                </motion.span>
+                <motion.span
+                  initial={reduceMotion ? undefined : { opacity: 0, y: 10 }}
+                  animate={
+                    introDone
+                      ? reduceMotion
+                        ? { opacity: 1 }
+                        : { opacity: 1, y: 0 }
+                      : {}
+                  }
+                  transition={{ duration: 0.65, delay: 0.5, ease }}
                   style={{
                     display: 'block',
                     marginTop: '0.45rem',
@@ -237,12 +278,12 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                       {secondarySplit.slice(1).join('#1')}
                     </>
                   ) : (
-                    headlineSecondary
+                    renderEmphasizedLine(headlineSecondary, true)
                   )}
-                </span>
+                </motion.span>
               </>
             ) : (
-              headlinePrimary
+              renderEmphasizedLine(headlinePrimary, true)
             )}
           </motion.h1>
 
