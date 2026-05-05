@@ -38,7 +38,7 @@ export function AboutWhoWeAre() {
           padding: 'clamp(4rem,7vw,7rem) clamp(1.5rem,4vw,3rem)',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: 'clamp(3rem, 6vw, 6rem)',
+          gap: 'clamp(3.8rem, 7.2vw, 7.2rem)',
           alignItems: 'center',
         }}
       >
