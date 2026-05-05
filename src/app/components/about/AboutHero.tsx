@@ -159,36 +159,47 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
 
       <div className="argo-about-hero">
         <div className="argo-about-hero-bg" aria-hidden="true">
-          <motion.video
-            ref={videoRef}
-            autoPlay
-            loop
-            muted
-            defaultMuted
-            playsInline
-            preload="auto"
-            initial={{ scale: 1, opacity: 1 }}
-            animate={
-              introDone
-                ? {
-                    scale: [1.11, 1.03, 1],
-                    opacity: [0, 0.62, 1],
-                    transition: { duration: 1.6, ease },
-                  }
-                : { scale: 1, opacity: 1 }
-            }
+          <div
             style={{
               position: 'absolute',
               inset: 0,
-              width: '112%',
+              width: '100%',
               height: '100%',
-              objectFit: 'cover',
-              objectPosition: '100% 45%',
-              transform: 'translateX(8%)',
+              overflow: 'hidden',
+              pointerEvents: 'none',
             }}
           >
-            <source src={HERO_VIDEO} type="video/mp4" />
-          </motion.video>
+            <motion.video
+              ref={videoRef}
+              autoPlay
+              loop
+              muted
+              defaultMuted
+              playsInline
+              preload="auto"
+              initial={{ scale: 1, opacity: 1 }}
+              animate={
+                introDone
+                  ? {
+                      scale: [1.11, 1.03, 1],
+                      opacity: [0, 0.62, 1],
+                      transition: { duration: 1.6, ease },
+                    }
+                  : { scale: 1, opacity: 1 }
+              }
+              style={{
+                position: 'absolute',
+                top: 0,
+                right: '-18%',
+                width: '122%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: '100% 45%',
+              }}
+            >
+              <source src={HERO_VIDEO} type="video/mp4" />
+            </motion.video>
+          </div>
           <motion.div
             initial={{ opacity: 1 }}
             animate={
