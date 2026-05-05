@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'motion/react';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 import { whoWeAre } from '../../data/about';
-import whoWeArePlaneImage from '../../../assets/who-we-are-hand-plane.jpg';
+import whoWeArePlaneImage from '../../../assets/who-we-are-argo-logo.jpg';
 
 const SIDE_IMAGE =
   whoWeArePlaneImage;
@@ -122,7 +122,7 @@ export function AboutWhoWeAre() {
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
-                  objectPosition: '50% 66%',
+                  objectPosition: '52% 48%',
                   display: 'block',
                   borderRadius: 12,
                 }}
