@@ -6,7 +6,7 @@
 export const hero = {
   eyebrow: 'About ARGO Fly B2B',
   headline: 'Powerful Pricing\nConfidence in Execution.',
-  body: 'A vision designed for your needs - more than just a booking tool, we are your strategic partner in delivering competitive rates and operational efficiency to keep your agency ahead of the curve.',
+  body: 'Designed for your needs, we go beyond booking to deliver competitive rates and operational efficiency that keep your agency ahead.',
   imageAlt: 'Commercial aircraft against blue sky',
 };
 

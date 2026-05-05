@@ -280,7 +280,13 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                       : {}
                   }
                   transition={{ duration: 0.72, delay: 0.3, ease }}
-                  style={{ display: 'block', fontWeight: 700 }}
+                  style={{
+                    display: 'block',
+                    fontWeight: 700,
+                    fontSize: 'clamp(2.02rem, 4.1vw, 3.45rem)',
+                    lineHeight: 1.1,
+                    letterSpacing: '-0.025em',
+                  }}
                 >
                   {renderEmphasizedLine(headlinePrimary, false)}
                 </motion.span>
