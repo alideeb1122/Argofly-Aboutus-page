@@ -342,7 +342,7 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                 </motion.span>
               </>
             ) : (
-              renderEmphasizedLine(headlinePrimary, false)
+              renderSecondaryLine(headlinePrimary)
             )}
           </motion.h1>
 
