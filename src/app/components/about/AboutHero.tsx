@@ -27,6 +27,7 @@ const HERO_CSS = `
     text-shadow: 0 6px 16px rgba(24,111,214,0.16);
     vertical-align: baseline;
     position: relative;
+    white-space: nowrap;
   }
   .argo-script-word__ink {
     display: inline-block;
