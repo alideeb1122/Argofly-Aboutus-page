@@ -18,6 +18,30 @@ const HERO_CSS = `
     padding: clamp(7.2rem,11vw,10rem) clamp(2rem,5vw,5rem) clamp(4.8rem,8vw,7rem) clamp(2rem,6vw,7rem);
   }
   .argo-about-hero-bg { position: absolute; inset: 0; overflow: hidden; }
+  .argo-script-word {
+    display: inline-block;
+    color: hsl(var(--primary));
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-shadow: 0 8px 22px rgba(24,111,214,0.22);
+    vertical-align: baseline;
+  }
+  .argo-script-word__ink {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: baseline;
+    max-width: 0;
+    animation: argoWriteIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.72s forwards;
+  }
+  @keyframes argoWriteIn {
+    from { max-width: 0; opacity: 0.55; }
+    to { max-width: 14ch; opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .argo-script-word__ink { animation: none; max-width: 14ch; opacity: 1; }
+  }
   @media (max-width: 767px) {
     .argo-about-hero { min-height: 560px; }
     .argo-about-hero-text { width: 100%; padding: 5.8rem 1.5rem 3rem; }
@@ -46,6 +70,22 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
           {firstWord}
         </span>
         {rest.length ? ` ${rest.join(' ')}` : ''}
+      </>
+    );
+  };
+  const renderSecondaryLine = (line: string) => {
+    const target = 'Execution';
+    const index = line.indexOf(target);
+    if (index === -1) return line;
+    const before = line.slice(0, index);
+    const after = line.slice(index + target.length);
+    return (
+      <>
+        {before}
+        <span className="argo-script-word" aria-label={target}>
+          <span className="argo-script-word__ink">{target}</span>
+        </span>
+        {after}
       </>
     );
   };
@@ -249,7 +289,7 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                   transition={{ duration: 0.72, delay: 0.3, ease }}
                   style={{ display: 'block', fontWeight: 700 }}
                 >
-                  {renderEmphasizedLine(headlinePrimary, true)}
+                  {renderEmphasizedLine(headlinePrimary, false)}
                 </motion.span>
                 <motion.span
                   initial={reduceMotion ? undefined : { opacity: 0, y: 10 }}
@@ -278,12 +318,12 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                       {secondarySplit.slice(1).join('#1')}
                     </>
                   ) : (
-                    renderEmphasizedLine(headlineSecondary, false)
+                    renderSecondaryLine(headlineSecondary)
                   )}
                 </motion.span>
               </>
             ) : (
-              renderEmphasizedLine(headlinePrimary, true)
+              renderEmphasizedLine(headlinePrimary, false)
             )}
           </motion.h1>
 
