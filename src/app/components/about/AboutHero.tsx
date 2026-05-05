@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 import { hero } from '../../data/about';
-import heroVideo from '../../../assets/0_Airplane_Aircraft_1920x1080.mp4';
+import heroVideo from '../../../assets/hero-optimized.mp4';
 
 const HERO_VIDEO = heroVideo;
 const HERO_VIDEO_RECOVERY_MS = 2500;
