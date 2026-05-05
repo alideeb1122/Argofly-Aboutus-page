@@ -1,7 +1,7 @@
 
 # High-End About Us Page
 
-This is a code bundle for High-End About Us Page. The original project is available at https://www.figma.com/design/KfrJaWjQ01CWLY774d43eo/High-End-About-Us-Page.
+This repository contains the About Us page implementation.
 
 ## Running the code
 
