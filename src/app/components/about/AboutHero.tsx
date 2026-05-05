@@ -189,12 +189,11 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
               }
               style={{
                 position: 'absolute',
-                top: 0,
-                right: '-18%',
-                width: '122%',
+                inset: 0,
+                width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                objectPosition: '100% 45%',
+                objectPosition: '94% 45%',
               }}
             >
               <source src={HERO_VIDEO} type="video/mp4" />
@@ -214,7 +213,7 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
               position: 'absolute',
               inset: 0,
               background:
-                'linear-gradient(96deg, rgba(244,248,253,0.92) 0%, rgba(241,247,253,0.78) 28%, rgba(234,242,250,0.50) 50%, rgba(225,236,248,0.21) 72%, rgba(220,232,246,0.08) 100%), linear-gradient(180deg, rgba(12,52,92,0.28) 0%, rgba(12,52,92,0.12) 42%, rgba(12,52,92,0.04) 100%)',
+                'linear-gradient(96deg, rgba(244,248,253,0.96) 0%, rgba(241,247,253,0.86) 34%, rgba(234,242,250,0.58) 52%, rgba(225,236,248,0.24) 74%, rgba(220,232,246,0.10) 100%), linear-gradient(180deg, rgba(12,52,92,0.28) 0%, rgba(12,52,92,0.12) 42%, rgba(12,52,92,0.04) 100%)',
             }}
           />
           <motion.div
