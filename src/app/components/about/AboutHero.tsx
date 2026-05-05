@@ -18,50 +18,6 @@ const HERO_CSS = `
     padding: clamp(7.2rem,11vw,10rem) clamp(2rem,5vw,5rem) clamp(4.8rem,8vw,7rem) clamp(2rem,6vw,7rem);
   }
   .argo-about-hero-bg { position: absolute; inset: 0; overflow: hidden; }
-  .argo-script-word {
-    display: inline-block;
-    color: hsl(var(--primary));
-    font-family: 'Sora', sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    text-shadow: 0 6px 16px rgba(24,111,214,0.16);
-    vertical-align: baseline;
-    position: relative;
-    white-space: nowrap;
-  }
-  .argo-script-word__ink {
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    vertical-align: baseline;
-    max-width: 0;
-    animation: argoWriteIn 0.72s cubic-bezier(0.22, 1, 0.36, 1) 0.64s forwards;
-  }
-  .argo-script-word::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0.08em;
-    height: 0.08em;
-    border-radius: 999px;
-    background: linear-gradient(90deg, hsl(var(--primary)) 0%, rgba(24,111,214,0.35) 100%);
-    transform: scaleX(0);
-    transform-origin: left;
-    animation: argoUnderlineIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards;
-  }
-  @keyframes argoWriteIn {
-    from { max-width: 0; opacity: 0.55; }
-    to { max-width: 11ch; opacity: 1; }
-  }
-  @keyframes argoUnderlineIn {
-    from { transform: scaleX(0); opacity: 0; }
-    to { transform: scaleX(1); opacity: 1; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .argo-script-word__ink { animation: none; max-width: 14ch; opacity: 1; }
-    .argo-script-word::after { animation: none; transform: scaleX(1); opacity: 1; }
-  }
   @media (max-width: 767px) {
     .argo-about-hero { min-height: 560px; }
     .argo-about-hero-text { width: 100%; padding: 5.8rem 1.5rem 3rem; }
@@ -90,22 +46,6 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
           {firstWord}
         </span>
         {rest.length ? ` ${rest.join(' ')}` : ''}
-      </>
-    );
-  };
-  const renderSecondaryLine = (line: string) => {
-    const target = 'Execution';
-    const index = line.indexOf(target);
-    if (index === -1) return line;
-    const before = line.slice(0, index);
-    const after = line.slice(index + target.length);
-    return (
-      <>
-        {before}
-        <span className="argo-script-word" aria-label={target}>
-          <span className="argo-script-word__ink">{target}</span>
-        </span>
-        {after}
       </>
     );
   };
@@ -338,12 +278,12 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                       {secondarySplit.slice(1).join('#1')}
                     </>
                   ) : (
-                    renderSecondaryLine(headlineSecondary)
+                    renderEmphasizedLine(headlineSecondary, false)
                   )}
                 </motion.span>
               </>
             ) : (
-              renderSecondaryLine(headlinePrimary)
+              renderEmphasizedLine(headlinePrimary, false)
             )}
           </motion.h1>
 
