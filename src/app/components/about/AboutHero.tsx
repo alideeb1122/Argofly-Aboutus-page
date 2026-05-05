@@ -180,10 +180,11 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
             style={{
               position: 'absolute',
               inset: 0,
-              width: '100%',
+              width: '112%',
               height: '100%',
               objectFit: 'cover',
-              objectPosition: '82% 45%',
+              objectPosition: '100% 45%',
+              transform: 'translateX(8%)',
             }}
           >
             <source src={HERO_VIDEO} type="video/mp4" />
