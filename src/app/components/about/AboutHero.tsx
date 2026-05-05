@@ -15,12 +15,12 @@ const HERO_CSS = `
     z-index: 2;
     display: flex; flex-direction: column; justify-content: center;
     width: min(56%, 860px);
-    padding: clamp(5rem,9vw,8rem) clamp(2rem,5vw,5rem) clamp(4rem,8vw,7rem) clamp(2rem,6vw,7rem);
+    padding: clamp(7.2rem,11vw,10rem) clamp(2rem,5vw,5rem) clamp(4.8rem,8vw,7rem) clamp(2rem,6vw,7rem);
   }
   .argo-about-hero-bg { position: absolute; inset: 0; overflow: hidden; }
   @media (max-width: 767px) {
     .argo-about-hero { min-height: 560px; }
-    .argo-about-hero-text { width: 100%; padding: 4.2rem 1.5rem 3rem; }
+    .argo-about-hero-text { width: 100%; padding: 5.8rem 1.5rem 3rem; }
   }
 `;
 
@@ -278,7 +278,7 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                       {secondarySplit.slice(1).join('#1')}
                     </>
                   ) : (
-                    renderEmphasizedLine(headlineSecondary, true)
+                    renderEmphasizedLine(headlineSecondary, false)
                   )}
                 </motion.span>
               </>
