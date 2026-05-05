@@ -14,7 +14,7 @@ const HERO_CSS = `
     position: relative;
     z-index: 2;
     display: flex; flex-direction: column; justify-content: center;
-    width: min(56%, 860px);
+    width: min(48%, 700px);
     padding: clamp(7.2rem,11vw,10rem) clamp(2rem,5vw,5rem) clamp(4.8rem,8vw,7rem) clamp(2rem,6vw,7rem);
   }
   .argo-about-hero-bg { position: absolute; inset: 0; overflow: hidden; }
@@ -193,7 +193,7 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                objectPosition: '94% 45%',
+                objectPosition: '100% 45%',
               }}
             >
               <source src={HERO_VIDEO} type="video/mp4" />
@@ -266,6 +266,7 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
               color: 'hsl(var(--foreground))',
               textShadow: '0 2px 10px rgba(255,255,255,0.12)',
               margin: 0,
+              maxWidth: 620,
             }}
           >
             {headlineSecondary ? (
