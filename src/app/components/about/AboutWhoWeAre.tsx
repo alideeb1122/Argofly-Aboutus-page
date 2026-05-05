@@ -89,6 +89,7 @@ export function AboutWhoWeAre() {
             aspectRatio: '1 / 1',
             overflow: 'hidden',
             justifySelf: 'center',
+            marginLeft: 'clamp(1.5rem, 3.5vw, 3.25rem)',
           }}
         >
           {/* Decorative border offset */}
