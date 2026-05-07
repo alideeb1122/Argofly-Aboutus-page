@@ -15,7 +15,7 @@ const HERO_CSS = `
     z-index: 2;
     display: flex; flex-direction: column; justify-content: center;
     width: min(54%, 820px);
-    padding: clamp(14.6rem,24vw,18.2rem) clamp(2rem,5vw,5rem) clamp(3.1rem,6vw,4.2rem) clamp(1.2rem,3vw,1.9rem);
+    padding: clamp(17.8rem,29vw,22rem) clamp(2rem,5vw,5rem) clamp(1.9rem,3.4vw,2.8rem) clamp(1.2rem,3vw,1.9rem);
   }
   .argo-about-hero-bg { position: absolute; inset: 0; overflow: hidden; }
   @media (max-width: 767px) {
@@ -199,60 +199,9 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
               <source src={HERO_VIDEO} type="video/mp4" />
             </motion.video>
           </div>
-          <motion.div
-            initial={{ opacity: 1 }}
-            animate={
-              introDone
-                ? {
-                    opacity: [1, 0.92, 1],
-                    transition: { duration: 1.35, ease },
-                  }
-                : {}
-            }
-            style={{
-              position: 'absolute',
-              inset: 0,
-              background:
-                'linear-gradient(96deg, rgba(242,247,253,0.78) 0%, rgba(238,245,252,0.60) 34%, rgba(228,239,250,0.34) 52%, rgba(216,231,246,0.14) 74%, rgba(210,226,243,0.06) 100%), linear-gradient(180deg, rgba(10,45,85,0.22) 0%, rgba(10,45,85,0.10) 42%, rgba(10,45,85,0.03) 100%)',
-            }}
-          />
-          <motion.div
-            aria-hidden="true"
-            initial={{ opacity: 0, x: '-22%' }}
-            animate={
-              introDone
-                ? {
-                    opacity: [0, 0.52, 0],
-                    x: ['-22%', '70%', '126%'],
-                    transition: { duration: 1.35, ease, delay: 0.2 },
-                  }
-                : {}
-            }
-            style={{
-              position: 'absolute',
-              inset: 0,
-              background: 'linear-gradient(100deg, transparent 34%, rgba(255,255,255,0.26) 50%, transparent 66%)',
-              mixBlendMode: 'screen',
-            }}
-          />
         </div>
 
         <div className="argo-about-hero-text">
-          <motion.div
-            aria-hidden="true"
-            initial={{ opacity: 0, y: 24 }}
-            animate={introDone ? { opacity: [0, 0.4, 0], y: 0 } : {}}
-            transition={{ duration: 1.2, delay: 0.25, ease }}
-            style={{
-              position: 'absolute',
-              inset: '-14% -18% -8% -10%',
-              zIndex: -1,
-              pointerEvents: 'none',
-              background:
-                'radial-gradient(circle at 20% 40%, rgba(255,255,255,0.56), rgba(255,255,255,0.16) 34%, transparent 58%)',
-              filter: 'blur(10px)',
-            }}
-          />
           <motion.h1
             initial={{ opacity: 0, y: 26, scale: 0.985 }}
             animate={introDone ? { opacity: 1, y: 0, scale: 1 } : {}}
@@ -260,8 +209,8 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
             style={{
               fontFamily: "'Playfair Display', Georgia, 'Times New Roman', serif",
               fontWeight: 700,
-              fontSize: 'clamp(2.15rem, 4.35vw, 3.9rem)',
-              lineHeight: 1.1,
+              fontSize: 'clamp(1.85rem, 3.6vw, 3.1rem)',
+              lineHeight: 1.14,
               letterSpacing: '-0.012em',
               color: 'rgba(248,252,255,0.98)',
               textShadow: '0 2px 10px rgba(0,0,0,0.26)',
@@ -284,8 +233,8 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                   style={{
                     display: 'block',
                     fontWeight: 700,
-                    fontSize: 'clamp(2.15rem, 4.35vw, 3.9rem)',
-                    lineHeight: 1.1,
+                    fontSize: 'clamp(1.85rem, 3.6vw, 3.1rem)',
+                    lineHeight: 1.14,
                     letterSpacing: '-0.012em',
                   }}
                 >
@@ -305,8 +254,8 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                     display: 'block',
                     marginTop: '0.28rem',
                     fontWeight: 700,
-                    fontSize: 'clamp(2.15rem, 4.35vw, 3.9rem)',
-                    lineHeight: 1.1,
+                    fontSize: 'clamp(1.85rem, 3.6vw, 3.1rem)',
+                    lineHeight: 1.14,
                     letterSpacing: '-0.012em',
                     color: 'rgba(248,252,255,0.98)',
                   }}
