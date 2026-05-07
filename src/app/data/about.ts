@@ -5,7 +5,7 @@
 
 export const hero = {
   eyebrow: 'About ARGO Fly B2B',
-  headline: 'Power in Pricing ...\nConfidence in Execution',
+  headline: 'Power in Pricing ...\nConfidence in\nExecution',
   body: 'Designed for you, beyond booking, ahead of the curve',
   imageAlt: 'Commercial aircraft against blue sky',
 };

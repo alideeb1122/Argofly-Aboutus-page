@@ -14,13 +14,13 @@ const HERO_CSS = `
     position: relative;
     z-index: 2;
     display: flex; flex-direction: column; justify-content: center;
-    width: min(48%, 700px);
-    padding: clamp(7.2rem,11vw,10rem) clamp(2rem,5vw,5rem) clamp(4.8rem,8vw,7rem) clamp(2rem,6vw,7rem);
+    width: min(52%, 760px);
+    padding: clamp(14rem,23vw,17rem) clamp(2rem,5vw,5rem) clamp(3rem,6vw,4rem) clamp(1.25rem,3.2vw,2rem);
   }
   .argo-about-hero-bg { position: absolute; inset: 0; overflow: hidden; }
   @media (max-width: 767px) {
     .argo-about-hero { min-height: 560px; }
-    .argo-about-hero-text { width: 100%; padding: 5.8rem 1.5rem 3rem; }
+    .argo-about-hero-text { width: 100%; padding: 5.8rem 1.25rem 3rem; }
   }
 `;
 
@@ -258,15 +258,15 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
             animate={introDone ? { opacity: 1, y: 0, scale: 1 } : {}}
             transition={{ duration: 0.95, delay: 0.26, ease }}
             style={{
-              fontFamily: "Georgia, 'Times New Roman', serif",
+              fontFamily: "'Playfair Display', Georgia, 'Times New Roman', serif",
               fontWeight: 700,
-              fontSize: 'clamp(1.95rem, 3.9vw, 3.2rem)',
-              lineHeight: 1.1,
-              letterSpacing: '-0.01em',
+              fontSize: 'clamp(1.95rem, 3.9vw, 3.35rem)',
+              lineHeight: 1.12,
+              letterSpacing: '-0.015em',
               color: 'rgba(248,252,255,0.98)',
               textShadow: '0 2px 10px rgba(0,0,0,0.26)',
               margin: 0,
-              maxWidth: 620,
+              maxWidth: 760,
             }}
           >
             {headlineSecondary ? (
@@ -284,9 +284,9 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                   style={{
                     display: 'block',
                     fontWeight: 700,
-                    fontSize: 'clamp(1.8rem, 3.5vw, 2.95rem)',
-                    lineHeight: 1.1,
-                    letterSpacing: '-0.01em',
+                    fontSize: 'clamp(1.95rem, 3.9vw, 3.35rem)',
+                    lineHeight: 1.12,
+                    letterSpacing: '-0.015em',
                   }}
                 >
                   {renderEmphasizedLine(headlinePrimary, false)}
@@ -303,11 +303,11 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                   transition={{ duration: 0.65, delay: 0.5, ease }}
                   style={{
                     display: 'block',
-                    marginTop: '0.45rem',
+                    marginTop: '0.35rem',
                     fontWeight: 700,
-                    fontSize: 'clamp(1.95rem, 3.9vw, 3.2rem)',
-                    lineHeight: 1.1,
-                    letterSpacing: '-0.01em',
+                    fontSize: 'clamp(1.95rem, 3.9vw, 3.35rem)',
+                    lineHeight: 1.12,
+                    letterSpacing: '-0.015em',
                     color: 'rgba(248,252,255,0.98)',
                   }}
                 >
@@ -335,12 +335,12 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
               style={{
                 fontFamily: "'Manrope', sans-serif",
                 fontWeight: 400,
-                fontSize: 'clamp(0.9rem, 1.5vw, 1.05rem)',
-                lineHeight: 1.75,
+                fontSize: 'clamp(0.95rem, 1.65vw, 1.15rem)',
+                lineHeight: 1.6,
                 color: 'rgba(239,248,255,0.95)',
                 textShadow: '0 1px 8px rgba(0,0,0,0.22)',
-                marginTop: '1.4rem',
-                maxWidth: 480,
+                marginTop: '1.05rem',
+                maxWidth: 560,
               }}
             >
               {hero.body}
