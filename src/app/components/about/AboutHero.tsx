@@ -60,7 +60,7 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
         {before}
         <span
           style={{
-            color: 'hsl(var(--primary))',
+            color: 'rgba(248,252,255,0.98)',
             fontWeight: 700,
             letterSpacing: '-0.01em',
           }}
@@ -258,13 +258,13 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
             animate={introDone ? { opacity: 1, y: 0, scale: 1 } : {}}
             transition={{ duration: 0.95, delay: 0.26, ease }}
             style={{
-              fontFamily: "'Sora', sans-serif",
+              fontFamily: "Georgia, 'Times New Roman', serif",
               fontWeight: 700,
               fontSize: 'clamp(1.95rem, 3.9vw, 3.2rem)',
               lineHeight: 1.1,
-              letterSpacing: '-0.025em',
-              color: 'hsl(var(--foreground))',
-              textShadow: '0 2px 10px rgba(255,255,255,0.12)',
+              letterSpacing: '-0.01em',
+              color: 'rgba(248,252,255,0.98)',
+              textShadow: '0 2px 10px rgba(0,0,0,0.26)',
               margin: 0,
               maxWidth: 620,
             }}
@@ -286,7 +286,7 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                     fontWeight: 700,
                     fontSize: 'clamp(1.8rem, 3.5vw, 2.95rem)',
                     lineHeight: 1.1,
-                    letterSpacing: '-0.025em',
+                    letterSpacing: '-0.01em',
                   }}
                 >
                   {renderEmphasizedLine(headlinePrimary, false)}
@@ -307,8 +307,8 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                     fontWeight: 700,
                     fontSize: 'clamp(1.95rem, 3.9vw, 3.2rem)',
                     lineHeight: 1.1,
-                    letterSpacing: '-0.025em',
-                    color: 'hsl(var(--foreground))',
+                    letterSpacing: '-0.01em',
+                    color: 'rgba(248,252,255,0.98)',
                   }}
                 >
                   {secondarySplit.length > 1 ? (
@@ -337,7 +337,8 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                 fontWeight: 400,
                 fontSize: 'clamp(0.9rem, 1.5vw, 1.05rem)',
                 lineHeight: 1.75,
-                color: 'hsl(214 42% 27%)',
+                color: 'rgba(239,248,255,0.95)',
+                textShadow: '0 1px 8px rgba(0,0,0,0.22)',
                 marginTop: '1.4rem',
                 maxWidth: 480,
               }}
