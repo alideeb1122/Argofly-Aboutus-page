@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 import { hero } from '../../data/about';
-import heroVideo from '../../../assets/hero-optimized.mp4';
+import heroVideo from '../../../assets/magnific_keep-the-airplane-fixed-i_2941197444 (1).mp4';
 
 const HERO_VIDEO = heroVideo;
 const HERO_VIDEO_RECOVERY_MS = 2500;
@@ -193,7 +193,7 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                objectPosition: '100% 45%',
+                objectPosition: '76% 50%',
               }}
             >
               <source src={HERO_VIDEO} type="video/mp4" />
