@@ -14,8 +14,8 @@ const HERO_CSS = `
     position: relative;
     z-index: 2;
     display: flex; flex-direction: column; justify-content: center;
-    width: min(52%, 760px);
-    padding: clamp(14rem,23vw,17rem) clamp(2rem,5vw,5rem) clamp(3rem,6vw,4rem) clamp(1.25rem,3.2vw,2rem);
+    width: min(54%, 820px);
+    padding: clamp(14.6rem,24vw,18.2rem) clamp(2rem,5vw,5rem) clamp(3.1rem,6vw,4.2rem) clamp(1.2rem,3vw,1.9rem);
   }
   .argo-about-hero-bg { position: absolute; inset: 0; overflow: hidden; }
   @media (max-width: 767px) {
@@ -260,13 +260,13 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
             style={{
               fontFamily: "'Playfair Display', Georgia, 'Times New Roman', serif",
               fontWeight: 700,
-              fontSize: 'clamp(1.95rem, 3.9vw, 3.35rem)',
-              lineHeight: 1.12,
-              letterSpacing: '-0.015em',
+              fontSize: 'clamp(2.15rem, 4.35vw, 3.9rem)',
+              lineHeight: 1.1,
+              letterSpacing: '-0.012em',
               color: 'rgba(248,252,255,0.98)',
               textShadow: '0 2px 10px rgba(0,0,0,0.26)',
               margin: 0,
-              maxWidth: 760,
+              maxWidth: 860,
             }}
           >
             {headlineSecondary ? (
@@ -284,9 +284,9 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                   style={{
                     display: 'block',
                     fontWeight: 700,
-                    fontSize: 'clamp(1.95rem, 3.9vw, 3.35rem)',
-                    lineHeight: 1.12,
-                    letterSpacing: '-0.015em',
+                    fontSize: 'clamp(2.15rem, 4.35vw, 3.9rem)',
+                    lineHeight: 1.1,
+                    letterSpacing: '-0.012em',
                   }}
                 >
                   {renderEmphasizedLine(headlinePrimary, false)}
@@ -303,11 +303,11 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                   transition={{ duration: 0.65, delay: 0.5, ease }}
                   style={{
                     display: 'block',
-                    marginTop: '0.35rem',
+                    marginTop: '0.28rem',
                     fontWeight: 700,
-                    fontSize: 'clamp(1.95rem, 3.9vw, 3.35rem)',
-                    lineHeight: 1.12,
-                    letterSpacing: '-0.015em',
+                    fontSize: 'clamp(2.15rem, 4.35vw, 3.9rem)',
+                    lineHeight: 1.1,
+                    letterSpacing: '-0.012em',
                     color: 'rgba(248,252,255,0.98)',
                   }}
                 >
@@ -335,12 +335,13 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
               style={{
                 fontFamily: "'Manrope', sans-serif",
                 fontWeight: 400,
-                fontSize: 'clamp(0.95rem, 1.65vw, 1.15rem)',
-                lineHeight: 1.6,
+                fontSize: 'clamp(0.98rem, 1.72vw, 1.22rem)',
+                lineHeight: 1.5,
                 color: 'rgba(239,248,255,0.95)',
                 textShadow: '0 1px 8px rgba(0,0,0,0.22)',
-                marginTop: '1.05rem',
-                maxWidth: 560,
+                marginTop: '1rem',
+                maxWidth: 820,
+                marginLeft: 0,
               }}
             >
               {hero.body}
