@@ -9,7 +9,7 @@ const HERO_VIDEO_RECOVERY_MS = 2500;
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const HERO_CSS = `
-  .argo-about-hero { position: relative; min-height: 580px; }
+  .argo-about-hero { position: relative; min-height: 640px; }
   .argo-about-hero-text {
     position: relative;
     z-index: 2;
@@ -19,7 +19,7 @@ const HERO_CSS = `
   }
   .argo-about-hero-bg { position: absolute; inset: 0; overflow: hidden; }
   @media (max-width: 767px) {
-    .argo-about-hero { min-height: 560px; }
+    .argo-about-hero { min-height: 600px; }
     .argo-about-hero-text { width: 100%; padding: 5.8rem 1.25rem 3rem; }
   }
 `;
@@ -193,11 +193,20 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                objectPosition: '76% 50%',
+                objectPosition: '76% 52%',
               }}
             >
               <source src={HERO_VIDEO} type="video/mp4" />
             </motion.video>
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                background:
+                  'linear-gradient(90deg, rgba(8,114,196,0.86) 0%, rgba(8,114,196,0.62) 24%, rgba(8,114,196,0.3) 42%, rgba(8,114,196,0.08) 62%, rgba(8,114,196,0) 78%)',
+                pointerEvents: 'none',
+              }}
+            />
           </div>
         </div>
 
