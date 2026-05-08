@@ -209,13 +209,13 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
             style={{
               fontFamily: "'Playfair Display', Georgia, 'Times New Roman', serif",
               fontWeight: 700,
-              fontSize: 'clamp(1.85rem, 3.6vw, 3.1rem)',
+              fontSize: 'clamp(1.69rem, 3.12vw, 2.72rem)',
               lineHeight: 1.14,
-              letterSpacing: '-0.012em',
+              letterSpacing: '-0.01em',
               color: 'rgba(248,252,255,0.98)',
               textShadow: '0 2px 10px rgba(0,0,0,0.26)',
               margin: 0,
-              maxWidth: 860,
+              maxWidth: 760,
             }}
           >
             {headlineSecondary ? (
@@ -233,9 +233,9 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                   style={{
                     display: 'block',
                     fontWeight: 700,
-                    fontSize: 'clamp(1.85rem, 3.6vw, 3.1rem)',
+                    fontSize: 'clamp(1.69rem, 3.12vw, 2.72rem)',
                     lineHeight: 1.14,
-                    letterSpacing: '-0.012em',
+                    letterSpacing: '-0.01em',
                   }}
                 >
                   {renderEmphasizedLine(headlinePrimary, false)}
@@ -254,9 +254,9 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                     display: 'block',
                     marginTop: '0.28rem',
                     fontWeight: 700,
-                    fontSize: 'clamp(1.85rem, 3.6vw, 3.1rem)',
+                    fontSize: 'clamp(1.69rem, 3.12vw, 2.72rem)',
                     lineHeight: 1.14,
-                    letterSpacing: '-0.012em',
+                    letterSpacing: '-0.01em',
                     color: 'rgba(248,252,255,0.98)',
                   }}
                 >

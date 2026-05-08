@@ -102,7 +102,7 @@ export type Milestone = {
 
 export const timeline: Milestone[] = [
   {
-    year: '2019',
+    year: '2022',
     title: 'CAESAR ROAD was established and the Erbil branch was opened',
     body: '',
   },

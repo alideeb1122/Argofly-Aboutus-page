@@ -73,19 +73,22 @@ function StatItem({
       {/* Number */}
       <div
         style={{
-          fontFamily: "'Sora', sans-serif",
+          fontFamily: "'Oswald', 'Sora', sans-serif",
           fontWeight: 700,
-          fontSize: 'clamp(2.4rem, 4vw, 3.2rem)',
+          fontSize: 'clamp(2.6rem, 4.4vw, 3.5rem)',
           lineHeight: 1,
-          letterSpacing: '-0.03em',
+          letterSpacing: '-0.01em',
           color: 'hsl(var(--foreground))',
           display: 'flex',
           alignItems: 'baseline',
-          gap: 2,
+          gap: 4,
+          fontVariantNumeric: 'tabular-nums lining-nums',
+          fontFeatureSettings: '"tnum" 1, "lnum" 1',
+          textShadow: '0 1px 0 rgba(255,255,255,0.35)',
         }}
       >
-        <span style={{ fontSize: '60%', color: 'hsl(var(--primary))', fontWeight: 600 }}>{stat.prefix}</span>
-        <span style={{ fontVariantNumeric: 'tabular-nums' }}>{formattedCount}</span>
+        <span style={{ fontSize: '56%', color: 'hsl(var(--primary))', fontWeight: 700 }}>{stat.prefix}</span>
+        <span>{formattedCount}</span>
         {stat.suffix && (
           <span style={{ fontSize: '65%', color: 'hsl(var(--primary))', fontWeight: 700 }}>{stat.suffix}</span>
         )}
@@ -98,6 +101,7 @@ function StatItem({
           fontWeight: 600,
           fontSize: '0.95rem',
           color: 'hsl(var(--foreground))',
+          marginLeft: 0,
         }}
       >
         {stat.label}
@@ -111,6 +115,7 @@ function StatItem({
           fontSize: '0.75rem',
           color: 'hsl(var(--muted-foreground))',
           letterSpacing: '0.01em',
+          marginLeft: 0,
         }}
       >
         {stat.sublabel}
