@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 import { hero } from '../../data/about';
-import heroVideo from '../../../assets/banner.mp4';
+import heroVideo from '../../../assets/banner(1)22.mp4';
 
 const HERO_VIDEO = heroVideo;
 const HERO_VIDEO_RECOVERY_MS = 2500;
@@ -78,6 +78,9 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
 
     video.muted = true;
     video.defaultMuted = true;
+    video.playsInline = true;
+    video.setAttribute('playsinline', 'true');
+    video.setAttribute('webkit-playsinline', 'true');
 
     let stallTimer = 0;
 
@@ -176,7 +179,9 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
               muted
               defaultMuted
               playsInline
-              preload="auto"
+              preload="metadata"
+              disablePictureInPicture
+              controlsList="nodownload nofullscreen noremoteplayback"
               style={{
                 position: 'absolute',
                 inset: 0,
@@ -184,8 +189,6 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
                 height: '100%',
                 objectFit: 'cover',
                 objectPosition: '76% 50%',
-                transform: 'scale(1.02)',
-                transformOrigin: 'center',
               }}
             >
               <source src={HERO_VIDEO} type="video/mp4" />

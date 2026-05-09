@@ -73,7 +73,7 @@ export function AboutFooter() {
                   <h3 className="text-[#eef6ff] font-semibold tracking-[0.11em] uppercase text-[1.02rem] mb-2.5 drop-shadow-[0_2px_5px_rgba(0,0,0,0.30)]">
                     {column.heading}
                   </h3>
-                  <ul className="list-none p-0 m-0 space-y-1 max-w-[20rem] min-h-[4.4rem]">
+                  <ul className="list-none p-0 m-0 space-y-1 max-w-[20rem] min-h-[3.2rem]">
                     {infoLines.map((line, index) => (
                       <li
                         key={index}
@@ -84,7 +84,7 @@ export function AboutFooter() {
                     ))}
                   </ul>
                   <p
-                    className="mt-3 font-semibold text-white text-[1.18rem] md:text-[1.22rem] leading-8 tracking-[0.01em] drop-shadow-[0_2px_6px_rgba(0,0,0,0.34)] whitespace-nowrap"
+                    className="mt-1.5 font-semibold text-white text-[1.18rem] md:text-[1.22rem] leading-8 tracking-[0.01em] drop-shadow-[0_2px_6px_rgba(0,0,0,0.34)] whitespace-nowrap"
                     style={{ fontVariantNumeric: 'tabular-nums' }}
                   >
                     {phoneLine}
