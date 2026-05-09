@@ -99,7 +99,7 @@ export function AboutHero({ introDone }: { introDone: boolean }) {
       }
 
       currentVideo.play().catch(() => {
-        // Keep retrying on constrained/free hosts; no fallback replacement.
+        // Retry playback on slow or unstable networks.
       });
     };
 

@@ -1,39 +1,46 @@
-# Deploy Handoff Notes (About Page)
+# Deployment Handoff Notes
 
-## Scope Included
-- About page visual refresh with brand color alignment (`#0474c4`).
-- Hero / Who We Are / Features / Values / Timeline / CTA styling updates.
-- New CTA block with two download buttons.
-- Local image assets added for About sections.
+## Deployment Type
 
-## Key Integration Notes
-1. CTA download links are currently set to:
-   - `/downloads/company-profile.pdf`
-   - `/downloads/user-guide.pdf`
-2. Ensure both files exist on the target server/CDN at those exact paths.
-3. If paths differ in production, update them in:
-   - `src/app/data/about.ts` (`cta.primaryHref`, `cta.secondaryHref`).
-4. CTA background image is externally loaded from Pexels in:
-   - `src/app/components/about/AboutCTA.tsx` (`SUPPORT_IMAGE`).
-   - If production CSP blocks external image domains, switch this to a local image under `src/assets`.
+- Static site build
+- Framework: React + Vite
 
-## New Local Assets Added
-- `src/assets/hero-plane.jpg`
-- `src/assets/why-argo-plane.jpg`
-- `src/assets/who-we-are-paper-plane.jpg`
+## Build Settings
 
-## Files Changed (Functional)
-- `src/styles/theme.css`
+- Install: `npm install`
+- Build: `npm run build`
+- Publish folder: `dist`
+
+## Required Runtime Assets
+
+No server runtime is required.
+
+## Required Static Files
+
+Before go-live, confirm these files exist at the expected public paths:
+
+- `/downloads/company-profile.pdf`
+- `/downloads/user-guide.pdf`
+
+If your hosting path differs, update:
+
 - `src/app/data/about.ts`
-- `src/app/components/about/AboutHero.tsx`
-- `src/app/components/about/AboutWhoWeAre.tsx`
-- `src/app/components/about/AboutFeatures.tsx`
-- `src/app/components/about/AboutValues.tsx`
-- `src/app/components/about/AboutMarquee.tsx`
-- `src/app/components/about/AboutTimeline.tsx`
-- `src/app/components/about/AboutFooter.tsx`
-- `src/app/components/about/AboutPage.tsx`
-- `src/app/components/about/AboutCTA.tsx`
+- Keys: `cta.primaryHref`, `cta.secondaryHref`
 
-## Verification
-- Last local verification: `npm run build` completed successfully.
+## External Dependencies
+
+- Google Fonts loaded from `fonts.googleapis.com`
+- Airline logos in marquee loaded from `gstatic.com` with local SVG fallback in code
+
+If your environment blocks external domains, either:
+
+1. Allow these domains in CSP/network policy, or
+2. Replace external resources with local assets.
+
+## Post-Deploy Checks
+
+1. Open About page and confirm hero video autoplay works on desktop/mobile.
+2. Confirm footer contact block alignment and phone numbers.
+3. Confirm CTA download buttons return 200 responses.
+4. Confirm no horizontal scroll on desktop and mobile widths.
+5. Confirm marquee logos render and gracefully fallback if blocked.

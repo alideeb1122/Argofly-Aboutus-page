@@ -151,7 +151,7 @@ export const footer: FooterContent = {
     {
       heading: 'UAE',
       lines: [
-        'Dubai - Al Barsha 1 Al Bidaya Building, 3rd',
+        'Dubai - Al Barsha 1 Al Bidaya Building, Office No. 302',
         '+971 52 901 5091',
       ],
     },
@@ -163,8 +163,8 @@ export const footer: FooterContent = {
       ],
     },
     {
-      heading: 'ERBIL',
-      lines: ['Erbil - Bakhtiari Street 20', '+964 776 094 8500'],
+      heading: 'IRAQ',
+      lines: ['Erbil - Bakhtiari', 'St 20', '+964 776 094 8500'],
     },
     {
       heading: 'HOTLINE',
