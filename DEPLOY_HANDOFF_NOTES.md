@@ -17,7 +17,7 @@ No server runtime is required.
 
 ## Required Static Files
 
-Before go-live, confirm these files exist at the expected public paths:
+The following files are now included in the repository and mapped to CTA download buttons:
 
 - `/downloads/company-profile.pdf`
 - `/downloads/user-guide.pdf`
